@@ -6,7 +6,7 @@ var http = require('http');
         .use(express.cookieParser())
         .use(express.bodyParser())
         .use(express.compress())
-        .use(express['static']('./../client/'));
+        .use(express.static(__dirname + '/../client/'));
 
     // Create the HTTP server
     http
