@@ -32,63 +32,78 @@
     <br>
     <br>
     <br>
-    <div class='container'>
+
+    <div class='centered'>
+        <div class='carousel'>
+            <img src='carousel/animaux.jpg' class='span2'/>
+            <img src='carousel/casino.jpg' class='span2'/>
+            <img src='carousel/cocaine.jpg' class='span2'/>
+            <img src='carousel/expression.jpg' class='span2'/>
+            <img src='carousel/finance.jpg' class='span2'/>
+            <img src='carousel/industrie.jpg' class='span2'/>
+            <img src='carousel/sea.jpg' class='span2'/>
+            <img src='carousel/music.jpg' class='span2'/>
+            <img src='carousel/bridge.jpg' class='span2'/>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class='carousel'>
+            <img src='carousel/icecream.jpg' class='span2'/>
+            <img src='carousel/prison.jpg' class='span2'/>
+            <img src='carousel/prostitution.jpg' class='span2'/>
+            <img src='carousel/sport.jpg' class='span2'/>
+            <img src='carousel/technology.jpg' class='span2'/>
+            <img src='carousel/work.jpg' class='span2'/>
+            <img src='carousel/food.jpg' class='span2'/>
+            <img src='carousel/tax.jpg' class='span2'/>
+            <img src='carousel/euro.jpg' class='span2'/>
+        </div>
+    </div>
+
+    <div class='container main'>
         <div class='row'>
             <img src='http://www.yorubagirldancing.com/wp-content/uploads/2010/08/Ice-cream.jpg'
-            class='span3' />
+            class='offset1 span4'/>
             <div class='span6 well' style='margin-bottom:0px'>
                 <h2 style='margin-bottom:0px'>Icecream for Europe<a style='margin-top:5px' href='#' class='btn pull-right'><i class='icon-star'></i> Follow</a></h2>
                 <h4 style='margin-top:0px; margin-bottom:25px'>www.icecream.eu</h4>
                 <p style='margin-bottom:28px'>It is the right for every child in Europe to have an icecream every week. Please help us reach 1 million signatures!</p>
 
-
-
-                <span class="label">Health</span>
-                <span class="label">Youth</span>
+                <span class='label'>Health</span>
+                <span class='label'>Youth</span>
 
                 <div class='fb-like pull-right' data-send='false' data-layout='button_count' data-width='450' data-show-faces='false'></div>
                 <a href='https://twitter.com/share' class='twitter-share-button pull-right' data-via='justinfdrake'>Tweet</a>
+                <div class='g-plusone pull-right' data-size='medium' style='margin-right:-10px'></div>
             </div>
+
+            <div class='span7' style='margin-top:8px'>
                 <div class='span3'>
-                    <center><b>10,234 votes</b></center>
+                    <center style='margin-bottom:4px'><b>10,234 votes</b></center>
                     <div class='progress progress-striped progress-success' style='height:8px'>
                         <div class='bar' style='width: 30%;'></div>
                     </div>
                 </div>
 
                 <div class='span3'>
-                    <center><b>123 days left</b></center>
+                    <center style='margin-bottom:4px'><b>123 days left</b></center>
                     <div class='progress progress-striped' style='height:8px'>
                         <div class='bar' style='width: 60%;'></div>
                     </div>
                 </div>
-
-
-<!--             <div class='span3'>
-                <table class='table'>
-                    <thead>
-                        <tr>
-                            <th>Days left</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>123</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div> -->
-
-
+            </div>
         </div>
     </div>
-    <div id='fb-root'></div>
+
     <script src='js/jquery.js'></script>
     <script src='js/bootstrap.js'></script>
     <script src='js/underscore.js'></script>
     <script src='js/main.js'></script>
     <script>
-        ! function(d, s, id) {
+        !function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
             if (!d.getElementById(id)) {
                 js = d.createElement(s);
@@ -97,15 +112,24 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }
         }(document, 'script', 'twitter-wjs');
-    </script>
-    <script>
-        (function(d, s, id) {
+
+        !function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s);
-            js.id = id;
-            js.src = '//connect.facebook.net/fr_FR/all.js#xfbml=1';
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = '//connect.facebook.net/fr_FR/all.js#xfbml=1';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'facebook-jssdk');
+
+        (function () {
+            var po = document.createElement('script');
+            po.type = 'text/javascript';
+            po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(po, s);
+        })();
     </script>
 </body>
