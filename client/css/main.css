@@ -18,3 +18,7 @@ table {
     margin: 0 auto;
     display: table;
 }
+
+.nav li {
+    cursor: pointer;
+}

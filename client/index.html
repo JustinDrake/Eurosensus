@@ -7,6 +7,8 @@
     <link href='css/footer.css' rel='stylesheet'>
     <link href='css/main.css' rel='stylesheet'>
     <link href='css/animation.css' rel='stylesheet'>
+    <link href='css/progressBars.css' rel='stylesheet'>
+    <link href='css/social.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -16,8 +18,8 @@
                 <div class='brand'>Eurosensus</div>
                 <div>
                     <ul class='nav panes-nav'>
-                        <li><a>Discover</a></li>
-                        <li><a>Start an initiative</a></li>
+                        <li id='take-tour'><a>Take the tour</a></li>
+                        <li><a>Register your initiative</a></li>
                     </ul>
                     <ul class='nav pull-right'>
                         <li><a>Log in</a></li>
@@ -85,17 +87,17 @@
             </div>
 
             <!-- Progress bars -->
-            <div style='margin-top:8px'>
+            <div>
                 <div class='span3'>
-                    <center style='margin-bottom:4px'><b>10,234 votes</b></center>
-                    <div class='progress progress-striped progress-success' style='height:8px'>
+                    <center class='bar-label'><b>10,234 votes</b></center>
+                    <div class='progress progress-striped progress-success'>
                         <div class='bar' style='width: 30%;'></div>
                     </div>
                 </div>
 
                 <div class='span3'>
-                    <center style='margin-bottom:4px'><b>123 days left</b></center>
-                    <div class='progress progress-striped' style='height:8px'>
+                    <center class='bar-label'><b>123 days left</b></center>
+                    <div class='progress progress-striped'>
                         <div class='bar' style='width: 60%;'></div>
                     </div>
                 </div>
@@ -149,7 +151,7 @@
             </div>
 
             <div class='span4'>
-                <legend>Past initiatives</legend>
+                <legend id='current-legend'>Current initiatives</legend>
 
                 <div class='fixed first'>
                     <div class='thumbnail'>
@@ -196,7 +198,7 @@
                 <center style='margin-top:140px'>
                     <button class='btn btn-success btn-large'>Discuss and improve drafts</button>
                     <h1>or</h1>
-                    <button class='btn btn-primary btn-large'>Start a new draft</button>
+                    <button class='btn btn-primary btn-large' id='new-draft'>Start a new draft</button>
                 </center>
             </div>
         </div>
@@ -204,6 +206,12 @@
 
     <!-- Footer -->
     <footer class='footer'>
+        <div class='share-buttons'>
+            <div class='share-button-boxy'><a class="social-stub social-share facebook" data-layout="box_count" data-shares="134" href="#">Share</a></div>
+            <div class='share-button-boxy'><a class="social-stub social-share twitter" data-shares="667" href="https://twitter.com/intent/tweet?original_referer=http://mashable.com/&amp;…m%2F2013%2F02%2F22%2Fsweden-northern-lights-time-lapse%2F&amp;via=mashable">Tweet</a></div>
+            <div class='share-button-boxy'><a class="social-stub social-share google_plus" data-shares="16" data-size="tall" href="#">+1</a></div>
+        </div>
+
         <div class='container'>
             <ul class='footer-links'>
                 <li><a>Blog</a></li>
@@ -217,8 +225,13 @@
 
     <script src='js/jquery.js'></script>
     <script src='js/bootstrap.js'></script>
+    <script src='js/jquery.cookie.js'></script>
+    <script src='js/bootstrap-tooltip.js'></script>
+    <script src='js/bootstrap-popover.js'></script>
+    <script src='js/bootstrap-tour.js'></script>
     <script src='js/underscore.js'></script>
     <script src='js/main.js'></script>
+
     <script>
         !function(d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0];
