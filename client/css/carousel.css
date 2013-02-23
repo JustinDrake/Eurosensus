@@ -1,0 +1,23 @@
+.carousel-container {
+    margin-top: 70px;
+}
+
+.carousel {
+    width: 1800px;
+    margin: 0 auto;
+    display: table;
+}
+
+.carousel img {
+    width: 200px;
+    height: 123px;
+    margin-left: 0px;
+    -webkit-filter: grayscale(100%);
+}
+
+.carousel img:hover {
+    outline: none;
+    border-color: #73b2e5;
+    box-shadow:0px 0px 20px #73b2e5;
+    -webkit-filter: grayscale(0%);
+}

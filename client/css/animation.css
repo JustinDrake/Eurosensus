@@ -1,0 +1,20 @@
+.span4 {
+    overflow: hidden;
+}
+
+.fixed {
+    margin-top: -378px;
+    width: 300px;
+}
+
+.first {
+    margin-top: 0px;
+}
+
+.two {
+    margin-left: -300px;
+}
+
+.three {
+    margin-left: -600px;
+}
