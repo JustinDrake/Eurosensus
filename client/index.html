@@ -3,6 +3,7 @@
     <meta charset='utf-8' http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
     <title>Eurosensus</title>
     <link href='css/bootstrap.css' rel='stylesheet'>
+    <link href='css/font-awesome.css' rel='stylesheet'>
     <link href='css/carousel.css' rel='stylesheet'>
     <link href='css/footer.css' rel='stylesheet'>
     <link href='css/main.css' rel='stylesheet'>
@@ -30,80 +31,91 @@
         </div>
     </div>
 
-    <div class='carousel-container'>
-        <div class='carousel'>
-            <img src='carousel/animaux.jpg'/>
-            <img src='carousel/casino.jpg'/>
-            <img src='carousel/cocaine.jpg'/>
-            <img src='carousel/expression.jpg'/>
-            <img src='carousel/finance.jpg'/>
-            <img src='carousel/industrie.jpg'/>
-            <img src='carousel/sea.jpg'/>
-            <img src='carousel/music.jpg'/>
-            <img src='carousel/bridge.jpg'/>
-            <img src='carousel/icecream.jpg'/>
-            <img src='carousel/prison.jpg'/>
-            <img src='carousel/prostitution.jpg'/>
-            <img src='carousel/sport.jpg'/>
-            <img src='carousel/technology.jpg'/>
-            <img src='carousel/work.jpg'/>
-            <img src='carousel/food.jpg'/>
-            <img src='carousel/tax.jpg'/>
-            <img src='carousel/euro.jpg'/>
-        </div>
-    </div>
+    <div class='bandeau'>
+        <div class='carousel-container'>
+            <div class='carousel'>
+                <span class='chevron'>
+                    <i class='icon-chevron-left'></i>
+                </span>
 
-    <div class='container focus'>
-        <legend>Featured initiative</legend>
-        <div class='row'>
-            <!-- Picture -->
-            <div class='offset2 span3'>
-                <img src='http://www.yorubagirldancing.com/wp-content/uploads/2010/08/Ice-cream.jpg'/>
+                <span id='image-container'><img src='carousel/animaux.jpg'/><img src='carousel/casino.jpg'/><img src='carousel/cocaine.jpg'/><img src='carousel/expression.jpg'/><img src='carousel/finance.jpg'/></span>
+
+                <span>
+                    <i class='icon-chevron-right'></i>
+                </span>
+    <!--            <img src='carousel/industrie.jpg'/>
+                <img src='carousel/sea.jpg'/>
+                <img src='carousel/music.jpg'/>
+                <img src='carousel/bridge.jpg'/>
+                <img src='carousel/icecream.jpg'/>
+                <img src='carousel/prison.jpg'/>
+                <img src='carousel/prostitution.jpg'/>
+                <img src='carousel/sport.jpg'/>
+                <img src='carousel/technology.jpg'/>
+                <img src='carousel/work.jpg'/>
+                <img src='carousel/food.jpg'/>
+                <img src='carousel/tax.jpg'/>
+                <img src='carousel/euro.jpg'/> -->
             </div>
-
-            <!-- Text content -->
-            <div class='span6'>
-                <div class='well' style='margin-bottom:0px'>
+        </div>
+        <hr>
+        <div class='container'>
+            <div class='row'>
+                <div class='span12 title'>
                     <!-- Title -->
-                    <h2 style='margin-bottom:0px'>Icecream for Europe<a style='margin-top:5px' class='btn pull-right'><i class='icon-star'></i> Follow</a></h2>
+                    <h2 style='margin-bottom:0px'>Icecream for Europe<a class='btn pull-right'><i class='icon-star'></i> Follow</a></h2>
 
                     <!-- Website -->
                     <h4 style='margin-top:0px; margin-bottom:25px'>www.icecream.eu</h4>
-
-                    <!-- Caption -->
-                    <p style='margin-bottom:28px; height:60px'>It is the right for every child in Europe to have an icecream every week. Please help us reach 1 million signatures!</p>
-
-                    <!-- Sharing functionalities -->
-                    <div class='share-buttons pull-right' style='margin-top:-30px; margin-right:-15px'>
-                        <div class='share-button-boxy'><a class="social-stub social-share facebook" data-layout="box_count" data-shares="134" href="#">Share</a></div>
-                        <div class='share-button-boxy'><a class="social-stub social-share twitter" data-shares="667" href="https://twitter.com/intent/tweet?original_referer=http://mashable.com/&amp;…m%2F2013%2F02%2F22%2Fsweden-northern-lights-time-lapse%2F&amp;via=mashable">Tweet</a></div>
-                        <div class='share-button-boxy'><a class="social-stub social-share google_plus" data-shares="16" data-size="tall" href="#">+1</a></div>
-                    </div>
-
-                    <!-- Labels -->
-                    <span class='label'>Health</span>
-                    <span class='label'>Youth</span>
                 </div>
             </div>
 
-            <!-- Progress bars -->
-            <div>
-                <div class='span3'>
-                    <center class='bar-label'><b>10,234 votes</b></center>
-                    <div class='progress progress-striped progress-success'>
-                        <div class='bar' style='width: 30%;'></div>
+            <div class='row'>
+                <!-- Video -->
+                <div class='span6'>
+                    <iframe width='460' height='259' src='http://www.youtube.com/embed/9bZkp7q19f0' frameborder='0' allowfullscreen></iframe>
+                </div>
+
+                <!-- Caption -->
+                <div class='span6'>
+                    <p class='description'>It is the right for every child in Europe to have an icecream every week. Please help us reach 1 million signatures!</p>
+                </div>
+
+                <div class='bar-container'>
+                    <!-- Progress bars -->
+                    <div class='span3'>
+                        <center class='bar-label'><b>10,234 votes</b></center>
+                        <div class='progress progress-striped progress-success'>
+                            <div class='bar' style='width: 30%;'></div>
+                        </div>
+                    </div>
+
+                    <div class='span3'>
+                        <center class='bar-label'><b>123 days left</b></center>
+                        <div class='progress progress-striped'>
+                            <div class='bar' style='width: 60%;'></div>
+                        </div>
                     </div>
                 </div>
 
-                <div class='span3'>
-                    <center class='bar-label'><b>123 days left</b></center>
-                    <div class='progress progress-striped'>
-                        <div class='bar' style='width: 60%;'></div>
+                <center>
+                    <div class='share-buttons'>
+                        <div class='share-button-boxy'>
+                            <a class='social-stub social-share facebook' data-layout='box_count' data-shares='134' href='#'>Share</a>
+                        </div>
+                        <div class='share-button-boxy'>
+                            <a class='social-stub social-share twitter' data-shares='667' href='https://twitter.com/intent/tweet?original_referer=http://mashable.com/&amp;…m%2F2013%2F02%2F22%2Fsweden-northern-lights-time-lapse%2F&amp;via=mashable'>Tweet</a>
+                        </div>
+                        <div class='share-button-boxy'>
+                            <a class='social-stub social-share google_plus' data-shares='16' data-size='tall' href='#'>+1</a>
+                        </div>
                     </div>
-                </div>
+                </center>
             </div>
         </div>
+    </div>
 
+    <div class='container'>
         <!-- Other initiatives -->
         <div class='row' style='margin-top:15px'>
             <div class='span4'>

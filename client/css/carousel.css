@@ -1,16 +1,16 @@
 .carousel-container {
-    margin-top: 70px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 .carousel {
-    width: 1800px;
     margin: 0 auto;
     display: table;
 }
 
 .carousel img {
-    width: 200px;
-    height: 123px;
+    width: 188px;
+    height: 116.2px;
     margin-left: 0px;
     -webkit-filter: grayscale(100%);
 }

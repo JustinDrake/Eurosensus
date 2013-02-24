@@ -1,7 +1,14 @@
 .bar-label {
     margin-bottom: 4px;
+    color: whitesmoke;
 }
 
 .progress {
     height: 8px;
+    margin-bottom: 0px;
+}
+
+.bar-container {
+    font-size: 21px;
+    line-height: 40px;
 }

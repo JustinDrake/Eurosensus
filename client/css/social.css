@@ -37,7 +37,6 @@ a.network-badge.network-badge-twitter:before, #site-footer .social li a.twitter:
     font-weight:normal;
     font-style:normal
 }
-
 .social-stub {
     width:44px;
     height:19px;
@@ -275,7 +274,7 @@ a.network-badge.network-badge-twitter:before, #site-footer .social li a.twitter:
     font-size:1.5rem;
     border-radius:2px;
     line-height:25px;
-    position:absolute
+    position:absolute;
 }
 .share-button-boxy .social-stub.linked_in:before {
     text-align:center;
@@ -283,22 +282,22 @@ a.network-badge.network-badge-twitter:before, #site-footer .social li a.twitter:
     left:0
 }
 .share-button-boxy .social-stub.twitter {
-    width:56px
+    width:56px;
 }
 .share-button-boxy .social-stub.twitter:before {
-    width:56px
+    width:56px;
 }
 .share-button-boxy .social-stub.facebook {
-    width:52px
+    width:52px;
 }
 .share-button-boxy .social-stub.facebook:before {
-    width:50px
+    width:50px;
 }
 .share-button-boxy .social-stub.google_plus {
-    width:50px
+    width:50px;
 }
 .share-button-boxy .social-stub.google_plus:before {
-    width:48px
+    width:48px;
 }
 html {
     font-size:62.5%;
