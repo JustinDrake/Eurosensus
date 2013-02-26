@@ -10,6 +10,7 @@
     <link href='css/animation.css' rel='stylesheet'>
     <link href='css/progressBars.css' rel='stylesheet'>
     <link href='css/social.css' rel='stylesheet'>
+    <link href='css/login.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -23,8 +24,27 @@
                         <li><a>Register your initiative</a></li>
                     </ul>
                     <ul class='nav pull-right'>
-                        <li><a>Log in</a></li>
-                        <li><a>Sign up</a></li>
+                        <li class='dropdown'>
+                            <a class='dropdown-toggle' data-toggle='dropdown'>Log in</a>
+                            <ul class='dropdown-menu'>
+                                <form class='form-horizontal'>
+                                    <input type='text' placeholder='Username'>
+                                    <input type='password' placeholder='Password'>
+                                </form>
+                            </ul>
+                        </li>
+                        <li class='dropdown'>
+                            <a class='dropdown-toggle' data-toggle='dropdown'>Sign up</a>
+                            <ul class='dropdown-menu'>
+                                <form class='form-horizontal'>
+                                    <input type='text' placeholder='Username'>
+                                    <input type='text' placeholder='Email'>
+                                    <input type='password' placeholder='Password'>
+                                    <input type='password' placeholder='Confirm password'>
+                                    <span class='btn btn-primary center' id='navbar-create-account'>Create account</span>
+                                </form>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -32,33 +52,27 @@
     </div>
 
     <div class='bandeau'>
-        <div class='carousel-container'>
-            <div class='carousel'>
-                <span class='chevron'>
-                    <i class='icon-chevron-left'></i>
-                </span>
-
-                <span id='image-container'><img src='carousel/animaux.jpg'/><img src='carousel/casino.jpg'/><img src='carousel/cocaine.jpg'/><img src='carousel/expression.jpg'/><img src='carousel/finance.jpg'/></span>
-
-                <span>
-                    <i class='icon-chevron-right'></i>
-                </span>
-    <!--            <img src='carousel/industrie.jpg'/>
-                <img src='carousel/sea.jpg'/>
-                <img src='carousel/music.jpg'/>
-                <img src='carousel/bridge.jpg'/>
-                <img src='carousel/icecream.jpg'/>
-                <img src='carousel/prison.jpg'/>
-                <img src='carousel/prostitution.jpg'/>
-                <img src='carousel/sport.jpg'/>
-                <img src='carousel/technology.jpg'/>
-                <img src='carousel/work.jpg'/>
+        <hr>
+        <div id='carousel' class='center'>
+            <i id='carousel-move-left' class='icon-chevron-left icon-4x'></i>
+            <span id='carousel-images'>
+                <span id='carousel-dummy'></span>
+                <img src='carousel/animaux.jpg'/>
+                <img src='carousel/industrie.jpg'/>
                 <img src='carousel/food.jpg'/>
-                <img src='carousel/tax.jpg'/>
-                <img src='carousel/euro.jpg'/> -->
-            </div>
+                <img src='carousel/expression.jpg'/>
+                <img src='carousel/finance.jpg'/>
+                <img src='carousel/bridge.jpg'/>
+                <img src='carousel/euro.jpg'/>
+                <img src='carousel/music.jpg'/>
+<!--                 <img src='carousel/prison.jpg'/>
+                <img src='carousel/sea.jpg'/>
+                <img src='carousel/tax.jpg'/> -->
+            </span>
+            <i id='carousel-move-right' class='icon-chevron-right'></i>
         </div>
         <hr>
+
         <div class='container'>
             <div class='row'>
                 <div class='span12 title'>
@@ -73,7 +87,7 @@
             <div class='row'>
                 <!-- Video -->
                 <div class='span6'>
-                    <iframe width='460' height='259' src='http://www.youtube.com/embed/9bZkp7q19f0' frameborder='0' allowfullscreen></iframe>
+                    <iframe width='460' height='259' src='http://www.youtube.com/embed/TD3WBqSAfEs' frameborder='0' allowfullscreen></iframe>
                 </div>
 
                 <!-- Caption -->
@@ -120,7 +134,6 @@
         <div class='row' style='margin-top:15px'>
             <div class='span4'>
                 <legend>Past initiatives</legend>
-
                 <div class='fixed first'>
                     <div class='thumbnail'>
                         <img style='width: 300px; height: 200px;' src='img/placeholder.png'/>
@@ -229,43 +242,18 @@
         </div>
     </footer>
 
-    <script src='js/jquery.js'></script>
-    <script src='js/bootstrap.js'></script>
-    <script src='js/jquery.cookie.js'></script>
-    <script src='js/bootstrap-tooltip.js'></script>
-    <script src='js/bootstrap-popover.js'></script>
-    <script src='js/bootstrap-tour.js'></script>
-    <script src='js/underscore.js'></script>
+    <!-- Libraries -->
+    <script src='js/lib/jquery.js'></script>
+    <script src='js/lib/bootstrap.js'></script>
+    <script src='js/lib/jquery.cookie.js'></script>
+    <script src='js/lib/bootstrap-tooltip.js'></script>
+    <script src='js/lib/bootstrap-popover.js'></script>
+    <script src='js/lib/bootstrap-tour.js'></script>
+    <script src='js/lib/underscore.js'></script>
+
+    <!-- Application -->
+    <script src='js/login.js'></script>
+    <script src='js/carousel.js'></script>
+
     <script src='js/main.js'></script>
-
-    <script>
-        !function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = '//platform.twitter.com/widgets.js';
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, 'script', 'twitter-wjs');
-
-        !function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (!d.getElementById(id)) {
-                js = d.createElement(s);
-                js.id = id;
-                js.src = '//connect.facebook.net/fr_FR/all.js#xfbml=1';
-                fjs.parentNode.insertBefore(js, fjs);
-            }
-        }(document, 'script', 'facebook-jssdk');
-
-        (function () {
-            var po = document.createElement('script');
-            po.type = 'text/javascript';
-            po.async = true;
-            po.src = 'https://apis.google.com/js/plusone.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(po, s);
-        })();
-    </script>
 </body>

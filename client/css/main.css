@@ -14,6 +14,11 @@ table {
     height: 285px;
 }
 
+.center {
+    margin: 0 auto;
+    display: table;
+}
+
 .centered {
     margin: 0 auto;
     display: table;
@@ -25,38 +30,6 @@ table {
 
 form {
     margin-bottom: 0px;
-}
-
-.bandeau {
-    margin-top: 30px;
-    padding: 10px 0px;
-    background-color: #303030;
-}
-
-.bandeau img {
-    margin-top: -80px;
-}
-
-.bandeau hr {
-    border-top: 1px solid #282828;
-    border-bottom: 1px solid #222222;
-    margin-bottom: 3px;
-}
-
-.carousel i {
-    font-size:8em;
-    margin: 25px;
-    color:#282828;
-}
-
-.carousel i:hover {
-    color:#222222;
-}
-
-.chevron {
-    top: 200px;
-    height: 114px !important;
-    margin-top: 200px;
 }
 
 .description {

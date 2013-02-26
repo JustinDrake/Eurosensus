@@ -19,8 +19,6 @@ $(function () {
 
     var tour = new Tour();
 
-    console.log(tour);
-
     tour.addStep({
         title: 'What is Eurosensus?',
         content: 'Welcome to Eurosensus, the best online platform dedicated to european initiatives.',

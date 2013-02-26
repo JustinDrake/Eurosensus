@@ -1,0 +1,7 @@
+.dropdown-menu form input {
+    margin: 6px 12px 6px 12px; /* Alignment issue with carousel */
+}
+
+#navbar-create-account {
+    margin-bottom: 6px;
+}
