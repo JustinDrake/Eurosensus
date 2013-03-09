@@ -32,13 +32,9 @@ form {
     margin-bottom: 0px;
 }
 
-.description {
-    color: whitesmoke;
-    font-size: 15px;
-}
-
-.title {
-    color: whitesmoke;
+.social-share {
+    -webkit-user-select: none;
+    cursor: pointer;
 }
 
 .share-buttons {

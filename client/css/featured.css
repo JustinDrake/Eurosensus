@@ -1,0 +1,24 @@
+.featured-title {
+    color: whitesmoke;
+    margin-bottom: 0px;
+}
+
+.featured-website {
+    color: whitesmoke;
+    margin-top: -5px;
+    margin-bottom: 20px;
+}
+
+.featured-description {
+    color: whitesmoke;
+}
+
+.featured-video {
+    border: 1px solid #282828;
+}
+
+#featured-container {
+    width: 960px;
+    height: 359px;
+    overflow: hidden;
+}

@@ -8,7 +8,8 @@
     margin-bottom: 0px;
 }
 
-.bar-container {
-    font-size: 21px;
-    line-height: 40px;
+.bar-container .span3{
+    font-size: 17px;
+    line-height: 25px;
+    margin-bottom: 30px;
 }

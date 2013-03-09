@@ -11,6 +11,7 @@
     <link href='css/progressBars.css' rel='stylesheet'>
     <link href='css/social.css' rel='stylesheet'>
     <link href='css/login.css' rel='stylesheet'>
+    <link href='css/featured.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -25,7 +26,8 @@
                     </ul>
                     <ul class='nav pull-right'>
                         <li class='dropdown'>
-                            <a class='dropdown-toggle' data-toggle='dropdown'>Log in</a>
+                            <!-- <a class='dropdown-toggle' data-toggle='dropdown'>Log in</a> -->
+                            <a id='login' href='/auth/facebook'>Facebook login</a>
                             <ul class='dropdown-menu'>
                                 <form class='form-horizontal'>
                                     <input type='text' placeholder='Username'>
@@ -53,80 +55,135 @@
 
     <div class='bandeau'>
         <hr>
-        <div id='carousel' class='center'>
-            <i id='carousel-move-left' class='icon-chevron-left icon-4x'></i>
-            <span id='carousel-images'>
-                <span id='carousel-dummy'></span>
-                <img src='carousel/animaux.jpg'/>
-                <img src='carousel/industrie.jpg'/>
-                <img src='carousel/food.jpg'/>
-                <img src='carousel/expression.jpg'/>
-                <img src='carousel/finance.jpg'/>
-                <img src='carousel/bridge.jpg'/>
-                <img src='carousel/euro.jpg'/>
-                <img src='carousel/music.jpg'/>
-<!--                 <img src='carousel/prison.jpg'/>
-                <img src='carousel/sea.jpg'/>
-                <img src='carousel/tax.jpg'/> -->
-            </span>
-            <i id='carousel-move-right' class='icon-chevron-right'></i>
+        <center>
+            <div id='carousel' style='width=1100px'>
+                <i id='carousel-move-left' class='icon-chevron-left icon-4x'></i>
+                <span id='carousel-images'>
+                    <span id='carousel-dummy'></span>
+                    <img src='carousel/animaux.jpg'/>
+                    <img src='carousel/industrie.jpg'/>
+                    <img src='carousel/food.jpg'/>
+                    <img src='carousel/expression.jpg'/>
+                    <img src='carousel/finance.jpg'/>
+                    <img src='carousel/bridge.jpg'/>
+                    <img src='carousel/euro.jpg'/>
+                    <img src='carousel/music.jpg'/>
+                    <img src='carousel/prison.jpg'/>
+                    <img src='carousel/sea.jpg'/>
+                    <img src='carousel/tax.jpg'/>
+                </span>
+                <i id='carousel-move-right' class='icon-chevron-right'></i>
+            </div>
+        </center>
+        <hr>
+        <div class='container' id='featured-container'>
+            <div id='featured-dummy'></div>
+            <div class='featured' id='ecocide'>
+                <div class='row'>
+                    <div class='span12 title'>
+                        <h3 class='featured-title'>Ecocide<a class='btn pull-right featured-follow'><i class='icon-star'></i> Follow</a></h2>
+
+                        <h4 class='featured-website'>www.endecocide.eu</h4>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <!-- Video -->
+                    <div class='span6'>
+                        <iframe class='featured-video' width='460' height='259' src='http://www.youtube.com/embed/j1uTDE5tayQ?modestbranding=1;autohide=1;showinfo=0;rel=0' frameborder='0' allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Caption -->
+                    <div class='span6'>
+                        <p class=' featured-description lead'>Ecocide is the extensive damage to, destruction of or loss of ecosystems of a given territory. Let's end Ecocide in Europe together!</p>
+                    </div>
+
+                    <div class='bar-container'>
+                        <!-- Progress bars -->
+                        <div class='span3 total-votes' >
+                            <center class='bar-label'><b></b> votes</center>
+                            <div class='progress progress-striped progress-success'>
+                                <div class='bar'></div>
+                            </div>
+                        </div>
+
+                        <div class='span3 days-left'>
+                            <center class='bar-label'><b></b> days left</center>
+                            <div class='progress progress-striped'>
+                                <div class='bar'></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <center>
+                        <div class='share-buttons'>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share facebook' data-shares='134'>Share</a>
+                            </div>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share twitter' data-shares='667'>Tweet</a>
+                            </div>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share google_plus' data-shares='16'>+1</a>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+            <div class='featured'>
+                <div class='row'>
+                    <div class='span12 title'>
+                        <h3 class='featured-title'>Icecream for Europe<a class='btn pull-right featured-follow'><i class='icon-star'></i> Follow</a></h2>
+
+                        <h4 class='featured-website'>www.icecream.eu</h4>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <!-- Video -->
+                    <div class='span6'>
+                        <iframe class='featured-video' width='460' height='259' src='http://www.youtube.com/embed/_f7-Eq4H0D8?modestbranding=1;autohide=1;showinfo=0;rel=0' frameborder='0' allowfullscreen></iframe>
+                    </div>
+
+                    <!-- Caption -->
+                    <div class='span6'>
+                        <p class=' featured-description lead'>Every European child has a right to a weekly icecream. Help us reach a million signatures for this delicious cause.</p>
+                    </div>
+
+                    <div class='bar-container'>
+                        <!-- Progress bars -->
+                        <div class='span3'>
+                            <center class='bar-label'><b>10,234 votes</b></center>
+                            <div class='progress progress-striped progress-success'>
+                                <div class='bar' style='width: 30%;'></div>
+                            </div>
+                        </div>
+
+                        <div class='span3'>
+                            <center class='bar-label'><b>123 days left</b></center>
+                            <div class='progress progress-striped'>
+                                <div class='bar' style='width: 60%;'></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <center>
+                        <div class='share-buttons'>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share facebook' data-shares='134'>Share</a>
+                            </div>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share twitter' data-shares='667'>Tweet</a>
+                            </div>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share google_plus' data-shares='16'>+1</a>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
         </div>
         <hr>
-
-        <div class='container'>
-            <div class='row'>
-                <div class='span12 title'>
-                    <!-- Title -->
-                    <h2 style='margin-bottom:0px'>Icecream for Europe<a class='btn pull-right'><i class='icon-star'></i> Follow</a></h2>
-
-                    <!-- Website -->
-                    <h4 style='margin-top:0px; margin-bottom:25px'>www.icecream.eu</h4>
-                </div>
-            </div>
-
-            <div class='row'>
-                <!-- Video -->
-                <div class='span6'>
-                    <iframe width='460' height='259' src='http://www.youtube.com/embed/TD3WBqSAfEs' frameborder='0' allowfullscreen></iframe>
-                </div>
-
-                <!-- Caption -->
-                <div class='span6'>
-                    <p class='description'>It is the right for every child in Europe to have an icecream every week. Please help us reach 1 million signatures!</p>
-                </div>
-
-                <div class='bar-container'>
-                    <!-- Progress bars -->
-                    <div class='span3'>
-                        <center class='bar-label'><b>10,234 votes</b></center>
-                        <div class='progress progress-striped progress-success'>
-                            <div class='bar' style='width: 30%;'></div>
-                        </div>
-                    </div>
-
-                    <div class='span3'>
-                        <center class='bar-label'><b>123 days left</b></center>
-                        <div class='progress progress-striped'>
-                            <div class='bar' style='width: 60%;'></div>
-                        </div>
-                    </div>
-                </div>
-
-                <center>
-                    <div class='share-buttons'>
-                        <div class='share-button-boxy'>
-                            <a class='social-stub social-share facebook' data-layout='box_count' data-shares='134' href='#'>Share</a>
-                        </div>
-                        <div class='share-button-boxy'>
-                            <a class='social-stub social-share twitter' data-shares='667' href='https://twitter.com/intent/tweet?original_referer=http://mashable.com/&amp;…m%2F2013%2F02%2F22%2Fsweden-northern-lights-time-lapse%2F&amp;via=mashable'>Tweet</a>
-                        </div>
-                        <div class='share-button-boxy'>
-                            <a class='social-stub social-share google_plus' data-shares='16' data-size='tall' href='#'>+1</a>
-                        </div>
-                    </div>
-                </center>
-            </div>
-        </div>
     </div>
 
     <div class='container'>
@@ -256,4 +313,5 @@
     <script src='js/carousel.js'></script>
 
     <script src='js/main.js'></script>
+    <script src='js/ecocide.js'></script>
 </body>

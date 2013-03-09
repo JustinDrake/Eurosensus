@@ -6,13 +6,14 @@ $(function () {
 
     var leftOffset = 0;
     var rightOffset = $images.children().length - 5 - 1;
+    var imageWidth = $images.children('img').first().css('width');
 
     $moveLeft.on('click', function () {
         $dummy
             .stop(true, true);
 
         if(rightOffset === 0) {
-            $dummy.css('margin-left', '+=188px');
+            $dummy.css('margin-left', '+=' + imageWidth);
 
             $images
                 .children('img')
@@ -26,7 +27,7 @@ $(function () {
 
         $dummy
             .animate({
-                'margin-left': '-=188px'
+                'margin-left': '-=' + imageWidth
             });
     });
 
@@ -35,7 +36,7 @@ $(function () {
             .stop(true, true);
 
         if(leftOffset === 0) {
-            $dummy.css('margin-left', '-=188px');
+            $dummy.css('margin-left', '-=' + imageWidth);
 
             $images
                 .children('img')
@@ -49,7 +50,7 @@ $(function () {
 
         $dummy
             .animate({
-                'margin-left': '+=188px'
+                'margin-left': '+=' + imageWidth
             });
     });
 });
