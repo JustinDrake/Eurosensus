@@ -6,7 +6,7 @@ var exec = require('child_process').exec;
 function ipAddress(callback) {
     var ip;
 
-    os.networkInterfaces()['en1'].forEach(function (entry) {
+    os.networkInterfaces().en1.forEach(function (entry) {
         if(entry.family === 'IPv4') {
             ip = entry.address;
         }
@@ -28,7 +28,7 @@ passport = require('passport');
         .use(express.compress())
         .use(function (req, res, next) {
             if(req.url === '/') {
-                console.log(req.connection.remoteAddress, new Date());
+                console.info(req.connection.remoteAddress, new Date());
             }
 
             next();
@@ -51,7 +51,7 @@ server.get('/auth/facebook/callback', passport.authenticate('facebook', { succes
     // Successful authentication, redirect home.
     console.log('Going home');
     res.redirect('/');
-  });
+});
 
 server.post('/username', function (req, res) {
     res.send(req.user && req.user.username);
@@ -59,6 +59,6 @@ server.post('/username', function (req, res) {
 
 module.exports = {
     server: server
-}
+};
 
 require('./votes.js');
