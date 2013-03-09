@@ -1,7 +1,8 @@
 var express = require('express');
 var http = require('http');
 var os = require('os');
-var exec = require('child_process').exec
+var exec = require('child_process').exec;
+var everyauth = require('everyauth');
 
 function ipAddress(callback) {
     var ip;
@@ -15,34 +16,50 @@ function ipAddress(callback) {
     return ip;
 }
 
-function createServer() {
-    var server = express()
+require('./passport.js');
+passport = require('passport');
+
+(function createServer() {
+    server = express()
         .use(express.cookieParser())
+        .use(express.session({secret: 'EuroSensus rocks!'}))
+        .use(passport.initialize())
+        .use(passport.session())
         .use(express.bodyParser())
         .use(express.compress())
+        .use(function (req, res, next) {
+            if(req.url === '/') {
+                console.log(req.connection.remoteAddress, new Date());
+            }
+
+            next();
+        })
         .use(express.static(__dirname + '/../client/'));
 
     // Create the HTTP server
     http
         .createServer(server)
         .listen(2000, ipAddress());
+}());
+
+
+server.get('/auth/facebook', function (req, res) {
+    console.log('/auth/facebook');
+    passport.authenticate('facebook')(req, res);
+});
+
+server.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/' }), function(req, res) {
+    // Successful authentication, redirect home.
+    console.log('Going home');
+    res.redirect('/');
+  });
+
+server.post('/username', function (req, res) {
+    res.send(req.user && req.user.username);
+});
+
+module.exports = {
+    server: server
 }
 
-(function startDatabase() {
-    // Kill existing mongod instances
-    exec('killall -15 mongod', function (err, stdout, stderr) {
-        // Start mongod instance
-        exec('mongod --dbpath ./db', function (err, stdout, stderr) {
-            if(err) {
-                console.error('Database error! Aborting.');
-                console.error(err, stdout, stderr);
-                process.exit(1);
-            }
-        }).stdout.on('data', function (data) {
-            // Wait until the database has started to continue
-            if(/waiting for connections on port 27017/.test(data)) {
-                createServer();
-            }
-        });
-    });
-}());
+require('./votes.js');
