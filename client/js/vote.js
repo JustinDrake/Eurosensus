@@ -1,10 +1,7 @@
 $(function () {
-    $('#vote')
-        .on('click', function () {
-            console.log('click!');
-
-            $('.modal').modal('show');
-        });
-
+    $('#vote').on('click', function () {
         $('.modal').modal('show');
+    });
+
+    $('.modal').modal('show');
 });

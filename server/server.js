@@ -2,7 +2,6 @@ var express = require('express');
 var http = require('http');
 var os = require('os');
 var exec = require('child_process').exec;
-var everyauth = require('everyauth');
 
 function ipAddress(callback) {
     var ip;
