@@ -35,7 +35,17 @@ module.exports = function(grunt) {
                 'js/*.js',
                 '../server/js/*.js'
             ]
-        }
+        },
+        imagemin: {
+            images: {
+                options: {
+                    optimizationLevel: 3
+                },
+                files: {
+                    'img/*.jpg': 'img/*.jpg',
+                }
+            }
+        },
     });
 
     // Default task

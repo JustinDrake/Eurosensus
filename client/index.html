@@ -2,6 +2,14 @@
 <head>
     <meta charset='utf-8' http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
     <title>Eurosensus</title>
+
+    <script>
+        // Cleanup the URL ??? Still have a URL glitch
+        if(window.location.hash !== '') {
+            history.pushState('', document.title, window.location.pathname);
+        }
+    </script>
+
     <link href='css/bootstrap.css' rel='stylesheet'>
     <link href='css/font-awesome.css' rel='stylesheet'>
     <link href='css/carousel.css' rel='stylesheet'>
@@ -25,27 +33,14 @@
                         <li><a>Register your initiative</a></li>
                     </ul>
                     <ul class='nav pull-right'>
-                        <li class='dropdown'>
-                            <!-- <a class='dropdown-toggle' data-toggle='dropdown'>Log in</a> -->
-                            <a id='login' href='/auth/facebook'>Facebook login</a>
-                            <ul class='dropdown-menu'>
-                                <form class='form-horizontal'>
-                                    <input type='text' placeholder='Username'>
-                                    <input type='password' placeholder='Password'>
-                                </form>
-                            </ul>
+                        <li>
+                            <a id='facebook-name' style='display:none'></a>
                         </li>
-                        <li class='dropdown'>
-                            <a class='dropdown-toggle' data-toggle='dropdown'>Sign up</a>
-                            <ul class='dropdown-menu'>
-                                <form class='form-horizontal'>
-                                    <input type='text' placeholder='Username'>
-                                    <input type='text' placeholder='Email'>
-                                    <input type='password' placeholder='Password'>
-                                    <input type='password' placeholder='Confirm password'>
-                                    <span class='btn btn-primary center' id='navbar-create-account'>Create account</span>
-                                </form>
-                            </ul>
+                        <li>
+                            <a id='facebook-logout' style='display:none'>Logout</a>
+                        </li>
+                        <li>
+                            <a id='facebook-login' href='/auth/facebook'>Facebook login</a>
                         </li>
                     </ul>
                 </div>
@@ -56,134 +51,67 @@
     <div class='bandeau'>
         <hr>
         <center>
-            <div id='carousel' style='width=1100px'>
-                <i id='carousel-move-left' class='icon-chevron-left icon-4x'></i>
+            <!-- ??? See http://jsfiddle.net/WfdFY/1/ -->
+            <div id='carousel'>
+                <a id='carousel-move-left' class='move'>‹</a>
                 <span id='carousel-images'>
                     <span id='carousel-dummy'></span>
-                    <img src='carousel/animaux.jpg'/>
-                    <img src='carousel/industrie.jpg'/>
-                    <img src='carousel/food.jpg'/>
-                    <img src='carousel/expression.jpg'/>
-                    <img src='carousel/finance.jpg'/>
-                    <img src='carousel/bridge.jpg'/>
-                    <img src='carousel/euro.jpg'/>
-                    <img src='carousel/music.jpg'/>
-                    <img src='carousel/prison.jpg'/>
-                    <img src='carousel/sea.jpg'/>
-                    <img src='carousel/tax.jpg'/>
+                    <!-- Real pictures -->
+                    <span class='image-class'>
+                        <img src='img/ecocide.jpg' target='ecocide'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='img/letMeVote.png' target='let-me-vote'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='img/oneSingleTariff.png' target='one-single-tariff'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/icecream.jpg' target='icecream-for-europe'/>
+                    </span>
+
+                    <!-- Dummy pictures -->
+                    <span class='image-class'>
+                        <img src='carousel/animaux.jpg'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/industrie.jpg'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/food.jpg'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/expression.jpg'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/finance.jpg'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/bridge.jpg'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/euro.jpg'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/music.jpg'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/prison.jpg'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/sea.jpg'/>
+                    </span>
+                    <span class='image-class'>
+                        <img src='carousel/tax.jpg'/>
+                    </span>
                 </span>
-                <i id='carousel-move-right' class='icon-chevron-right'></i>
+                <a id='carousel-move-right' class='move'>›</a>
             </div>
         </center>
         <hr>
         <div class='container' id='featured-container'>
             <div id='featured-dummy'></div>
-            <div class='featured' id='ecocide'>
-                <div class='row'>
-                    <div class='span12 title'>
-                        <h3 class='featured-title'>Ecocide<a class='btn pull-right featured-follow'><i class='icon-star'></i> Follow</a></h2>
-
-                        <h4 class='featured-website'>www.endecocide.eu</h4>
-                    </div>
-                </div>
-
-                <div class='row'>
-                    <!-- Video -->
-                    <div class='span6'>
-                        <iframe class='featured-video' width='460' height='259' src='http://www.youtube.com/embed/j1uTDE5tayQ?modestbranding=1;autohide=1;showinfo=0;rel=0' frameborder='0' allowfullscreen></iframe>
-                    </div>
-
-                    <!-- Caption -->
-                    <div class='span6'>
-                        <p class=' featured-description lead'>Ecocide is the extensive damage to, destruction of or loss of ecosystems of a given territory. Let's end Ecocide in Europe together!</p>
-                    </div>
-
-                    <div class='bar-container'>
-                        <!-- Progress bars -->
-                        <div class='span3 total-votes' >
-                            <center class='bar-label'><b></b> votes</center>
-                            <div class='progress progress-striped progress-success'>
-                                <div class='bar'></div>
-                            </div>
-                        </div>
-
-                        <div class='span3 days-left'>
-                            <center class='bar-label'><b></b> days left</center>
-                            <div class='progress progress-striped'>
-                                <div class='bar'></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <center>
-                        <div class='share-buttons'>
-                            <div class='share-button-boxy'>
-                                <a class='social-stub social-share facebook' data-shares='134'>Share</a>
-                            </div>
-                            <div class='share-button-boxy'>
-                                <a class='social-stub social-share twitter' data-shares='667'>Tweet</a>
-                            </div>
-                            <div class='share-button-boxy'>
-                                <a class='social-stub social-share google_plus' data-shares='16'>+1</a>
-                            </div>
-                        </div>
-                    </center>
-                </div>
-            </div>
-            <div class='featured'>
-                <div class='row'>
-                    <div class='span12 title'>
-                        <h3 class='featured-title'>Icecream for Europe<a class='btn pull-right featured-follow'><i class='icon-star'></i> Follow</a></h2>
-
-                        <h4 class='featured-website'>www.icecream.eu</h4>
-                    </div>
-                </div>
-
-                <div class='row'>
-                    <!-- Video -->
-                    <div class='span6'>
-                        <iframe class='featured-video' width='460' height='259' src='http://www.youtube.com/embed/_f7-Eq4H0D8?modestbranding=1;autohide=1;showinfo=0;rel=0' frameborder='0' allowfullscreen></iframe>
-                    </div>
-
-                    <!-- Caption -->
-                    <div class='span6'>
-                        <p class=' featured-description lead'>Every European child has a right to a weekly icecream. Help us reach a million signatures for this delicious cause.</p>
-                    </div>
-
-                    <div class='bar-container'>
-                        <!-- Progress bars -->
-                        <div class='span3'>
-                            <center class='bar-label'><b>10,234 votes</b></center>
-                            <div class='progress progress-striped progress-success'>
-                                <div class='bar' style='width: 30%;'></div>
-                            </div>
-                        </div>
-
-                        <div class='span3'>
-                            <center class='bar-label'><b>123 days left</b></center>
-                            <div class='progress progress-striped'>
-                                <div class='bar' style='width: 60%;'></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <center>
-                        <div class='share-buttons'>
-                            <div class='share-button-boxy'>
-                                <a class='social-stub social-share facebook' data-shares='134'>Share</a>
-                            </div>
-                            <div class='share-button-boxy'>
-                                <a class='social-stub social-share twitter' data-shares='667'>Tweet</a>
-                            </div>
-                            <div class='share-button-boxy'>
-                                <a class='social-stub social-share google_plus' data-shares='16'>+1</a>
-                            </div>
-                        </div>
-                    </center>
-                </div>
-            </div>
         </div>
-        <hr>
     </div>
 
     <div class='container'>
@@ -286,6 +214,81 @@
         </div>
     </div>
 
+    <script type='mustache' id='thumbnail'>
+        <div class='thumbnail'>
+            <img style='width: 300px; height: 200px;' src='img/placeholder.png'/>
+            <div class='caption'>
+                <h3>Test 1</h3>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+        </div>
+    </script>
+
+    <script type='mustache' id='template'>
+        <div id='featured-dummy'></div>
+        {{#ECIs}}
+            <div class='featured' id='{{id}}'>
+                <div class='row'>
+                    <div class='span12 title'>
+                        <h3 class='featured-title'>{{name}}<a class='btn pull-right featured-follow'><i class='icon-star'></i> Follow</a></h3>
+
+                        <h4 class='featured-website'>{{site}}</h4>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <!-- YouTube video or image -->
+                    <div class='span6'>
+                        {{#youtube}}
+                            <iframe class='featured-video' width='460' height='259' src='http://www.youtube.com/embed/{{youtube}}?modestbranding=1;autohide=1;showinfo=0;rel=0' frameborder='0' allowfullscreen></iframe>
+                        {{/youtube}}
+                        {{^youtube}}
+                            <center>
+                                <img class='featured-image' src='./img/{{image}}'></img>
+                            </center>
+                        {{/youtube}}
+                    </div>
+
+                    <!-- Caption -->
+                    <div class='span6'>
+                        <p class=' featured-description lead'>{{caption}}</p>
+                    </div>
+
+                    <div class='bar-container'>
+                        <!-- Progress bars -->
+                        <div class='span3 total-votes'>
+                            <center class='bar-label'><b></b> votes</center>
+                            <div class='progress progress-striped progress-success'>
+                                <div class='bar'></div>
+                            </div>
+                        </div>
+
+                        <div class='span3 days-left'>
+                            <center class='bar-label'><b></b> days left</center>
+                            <div class='progress progress-striped'>
+                                <div class='bar'></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <center>
+                        <div class='share-buttons'>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share facebook' data-shares='?'>Share</a>
+                            </div>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share twitter' data-shares='?'>Tweet</a>
+                            </div>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share google_plus' data-shares='?'>+1</a>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        {{/ECIs}}
+    </script>
+
     <!-- Footer -->
     <footer class='footer'>
         <div class='container'>
@@ -307,9 +310,13 @@
     <script src='js/lib/bootstrap-popover.js'></script>
     <script src='js/lib/bootstrap-tour.js'></script>
     <script src='js/lib/underscore.js'></script>
+    <script src='js/lib/mustache.js'></script>
 
     <!-- Application -->
+    <script src='js/populate.js'></script>
+    <script src='js/facebook.js'></script>
     <script src='js/carousel.js'></script>
     <script src='js/tour.js'></script>
     <script src='js/featured.js'></script>
+    <script src='js/summaries.js'></script>
 </body>

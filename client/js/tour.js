@@ -1,28 +1,4 @@
 $(function () {
-    $('#carousel img').on('click', function () {
-        $('#featured-dummy').animate({
-            'margin-top': '-=359px'
-        });
-    });
-
-    $('.right-animation').on('click', function () {
-        $(this)
-            .closest('.span4')
-            .find('.fixed')
-            .animate({
-                'margin-left': '+=300'
-            });
-    });
-
-    $('.left-animation').on('click', function () {
-        $(this)
-            .closest('.span4')
-            .find('.fixed')
-            .animate({
-                'margin-left': '-=300'
-            });
-    });
-
     var tour = new Tour();
 
     tour.addStep({

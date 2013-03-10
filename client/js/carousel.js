@@ -4,9 +4,11 @@ $(function () {
     var $moveLeft = $('#carousel-move-left');
     var $moveRight = $('#carousel-move-right');
 
+    var displayedImages = 5;
+
     var leftOffset = 0;
-    var rightOffset = $images.children().length - 5 - 1;
-    var imageWidth = $images.children('img').first().css('width');
+    var rightOffset = $images.children().length - displayedImages - 1;
+    var imageWidth = $images.find('.image-class').first().css('width');
 
     $moveLeft.on('click', function () {
         $dummy
@@ -16,7 +18,7 @@ $(function () {
             $dummy.css('margin-left', '+=' + imageWidth);
 
             $images
-                .children('img')
+                .find('.image-class')
                 .first()
                 .detach()
                 .appendTo($images);
@@ -39,7 +41,7 @@ $(function () {
             $dummy.css('margin-left', '-=' + imageWidth);
 
             $images
-                .children('img')
+                .find('.image-class')
                 .last()
                 .detach()
                 .insertAfter($dummy);

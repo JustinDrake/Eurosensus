@@ -1,12 +1,18 @@
 .featured-title {
+    cursor: pointer;
     color: whitesmoke;
     margin-bottom: 0px;
 }
 
 .featured-website {
+    cursor: pointer;
     color: whitesmoke;
     margin-top: -5px;
     margin-bottom: 20px;
+}
+
+.featured-website:hover {
+    text-decoration: underline;
 }
 
 .featured-description {
@@ -15,6 +21,12 @@
 
 .featured-video {
     border: 1px solid #282828;
+}
+
+.featured-image {
+    max-height: 266px; /* 259 + 7 */
+    min-height: 266px;
+    max-width: 460px;
 }
 
 #featured-container {
