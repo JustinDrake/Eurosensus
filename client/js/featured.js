@@ -12,6 +12,7 @@ $(function () {
             });
     });
 
+    // Bring user to the detailed information page
     $('.featured-title').on('click', function () {
         window.location.href += 'initiative.html';
     });
@@ -41,7 +42,7 @@ $(function () {
         $totalVotes.find('.bar').css('width', (data.totalVotes / 10000) + '%');
     });
 
-    $ecocide.on('click', '.featured-website', function () {
+    $('#featured-container').on('click', '.featured-website', function () {
         window.open('http://' + $(this).text(), '_blank');
     });
 });

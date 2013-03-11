@@ -37,17 +37,25 @@ module.exports = function(grunt) {
             ]
         },
         imagemin: {
-            images: {
+            dynamic_mappings: {
                 options: {
                     optimizationLevel: 3
                 },
-                files: {
-                    'img/*.jpg': 'img/*.jpg',
-                }
+                files: [{
+                    expand: true,
+                    src: ['*'],
+                    cwd: './img',
+                    dest: './img'
+                }, {
+                    expand: true,
+                    src: ['*'],
+                    cwd: './carousel',
+                    dest: './carousel'
+                }]
             }
-        },
+        }
     });
 
     // Default task
-    grunt.registerTask('default', ['jshint']);
+    grunt.registerTask('default', ['jshint', 'imagemin']);
 };

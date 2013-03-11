@@ -51,67 +51,14 @@
     <div class='bandeau'>
         <hr>
         <center>
-            <!-- ??? See http://jsfiddle.net/WfdFY/1/ -->
-            <div id='carousel'>
-                <a id='carousel-move-left' class='move'>‹</a>
-                <span id='carousel-images'>
-                    <span id='carousel-dummy'></span>
-                    <!-- Real pictures -->
-                    <span class='image-class'>
-                        <img src='img/ecocide.jpg' target='ecocide'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='img/letMeVote.png' target='let-me-vote'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='img/oneSingleTariff.png' target='one-single-tariff'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/icecream.jpg' target='icecream-for-europe'/>
-                    </span>
-
-                    <!-- Dummy pictures -->
-                    <span class='image-class'>
-                        <img src='carousel/animaux.jpg'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/industrie.jpg'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/food.jpg'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/expression.jpg'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/finance.jpg'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/bridge.jpg'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/euro.jpg'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/music.jpg'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/prison.jpg'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/sea.jpg'/>
-                    </span>
-                    <span class='image-class'>
-                        <img src='carousel/tax.jpg'/>
-                    </span>
-                </span>
-                <a id='carousel-move-right' class='move'>›</a>
-            </div>
+            <!-- ??? See http://jsfiddle.net/WfdFY/2/ -->
+            <div id='carousel'></div>
         </center>
         <hr>
         <div class='container' id='featured-container'>
             <div id='featured-dummy'></div>
         </div>
+        <hr>
     </div>
 
     <div class='container'>
@@ -224,7 +171,20 @@
         </div>
     </script>
 
-    <script type='mustache' id='template'>
+    <script type='mustache' id='template-carousel'>
+        <a id='carousel-move-left' class='move'>‹</a>
+        <span id='carousel-images'>
+            <span id='carousel-dummy'></span>
+            {{#ECIs}}
+                <span class='image-class'>
+                    <img src='img/{{image}}' target='{{id}}'/>
+                </span>
+            {{/ECIs}}
+        </span>
+        <a id='carousel-move-right' class='move'>›</a>
+    </script>
+
+    <script type='mustache' id='template-featured'>
         <div id='featured-dummy'></div>
         {{#ECIs}}
             <div class='featured' id='{{id}}'>
@@ -313,6 +273,7 @@
     <script src='js/lib/mustache.js'></script>
 
     <!-- Application -->
+    <script src='js/data.js'></script>
     <script src='js/populate.js'></script>
     <script src='js/facebook.js'></script>
     <script src='js/carousel.js'></script>
