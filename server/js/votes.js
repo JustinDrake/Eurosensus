@@ -1,6 +1,7 @@
 var http = require('http');
 var util = require('util');
 var server = require('./server.js').server;
+var record = require('./database.js').record;
 
 function daysLeft(endDate) {
     var millisecondDifference = new Date(endDate).getTime() - Date.now();
@@ -16,6 +17,8 @@ server.post('/ecocide', function (req, res) {
             var match = piece.match(/var counts = "(\d+)"/);
 
             if(match !== null) {
+                record(match[1]);
+
                 return res.send({
                     daysLeft: daysLeft('2014-02-18'),
                     totalVotes: match[1]

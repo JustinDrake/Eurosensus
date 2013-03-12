@@ -2,6 +2,9 @@ var express = require('express');
 var http = require('http');
 var os = require('os');
 var exec = require('child_process').exec;
+var passport = require('passport');
+
+var seenIPs = {};
 
 function ipAddress(callback) {
     var ip;
@@ -16,7 +19,6 @@ function ipAddress(callback) {
 }
 
 require('./passport.js');
-passport = require('passport');
 
 (function createServer() {
     server = express()
@@ -28,12 +30,15 @@ passport = require('passport');
         .use(express.compress())
         .use(function (req, res, next) {
             if(req.url === '/') {
-                console.info(req.connection.remoteAddress, new Date());
+                if(!seenIPs[req.connection.remoteAddress]) {
+                    seenIPs[req.connection.remoteAddress] = true;
+                    console.info(req.connection.remoteAddress, new Date());
+                }
             }
 
             next();
         })
-        .use(express.static(__dirname + '/../client/'));
+        .use(express.static(__dirname + '/../../client/'));
 
     // Create the HTTP server
     http
@@ -41,24 +46,27 @@ passport = require('passport');
         .listen(2000, ipAddress());
 }());
 
-
-server.get('/auth/facebook', function (req, res) {
-    console.log('/auth/facebook');
-    passport.authenticate('facebook')(req, res);
-});
+server.get('/auth/facebook', passport.authenticate('facebook'));
 
 server.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/' }), function(req, res) {
-    // Successful authentication, redirect home.
-    console.log('Going home');
     res.redirect('/');
 });
 
 server.post('/username', function (req, res) {
-    res.send(req.user && req.user.username);
+    res.send(req.user && req.user.displayName);
+});
+
+server.post('/logout', function (req, res) {
+    req.logout();
+    res.send('OK');
 });
 
 module.exports = {
     server: server
 };
+
+process.on('uncaughtException', function(err) {
+    console.error(err);
+});
 
 require('./votes.js');

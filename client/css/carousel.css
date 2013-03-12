@@ -37,10 +37,6 @@
     -webkit-filter: grayscale(100%);
 }
 
-#carousel-images img:hover {
-    -webkit-filter: grayscale(0%);
-}
-
 #carousel .move {
     width: 40px;
     height: 40px;
@@ -71,4 +67,15 @@
 
 #carousel-move-right {
     margin-left: 15px;
+}
+
+.image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 192px;
+    height: 119px;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0;
 }

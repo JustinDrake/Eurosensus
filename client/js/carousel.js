@@ -10,7 +10,7 @@ $(function () {
     var rightOffset = $images.children().length - displayedImages - 1;
     var imageWidth = $images.find('.image-class').first().css('width');
 
-    $moveLeft.on('click', function () {
+    $moveRight.on('click', function () {
         $dummy
             .stop(true, true);
 
@@ -33,7 +33,7 @@ $(function () {
             });
     });
 
-    $moveRight.on('click', function () {
+    $moveLeft.on('click', function () {
         $dummy
             .stop(true, true);
 
@@ -54,5 +54,17 @@ $(function () {
             .animate({
                 'margin-left': '+=' + imageWidth
             });
+    });
+
+    $('.image-class').on('mouseover', function () {
+        // $(this).find('.image-overlay').show();
+
+        $(this).find('img').css('-webkit-filter', 'grayscale(0%)');
+    });
+
+    $('.image-class').on('mouseout', function () {
+        // $(this).find('.image-overlay').hide();
+
+        $(this).find('img').css('-webkit-filter', 'grayscale(100%)');
     });
 });
