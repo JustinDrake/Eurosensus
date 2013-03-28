@@ -8,7 +8,7 @@ $(function () {
 
     var leftOffset = 0;
     var rightOffset = $images.children().length - displayedImages - 1;
-    var imageWidth = $images.find('.image-class').first().css('width');
+    var imageWidth = $images.find('.carousel-image').first().css('width');
 
     $moveRight.on('click', function () {
         $dummy
@@ -18,7 +18,7 @@ $(function () {
             $dummy.css('margin-left', '+=' + imageWidth);
 
             $images
-                .find('.image-class')
+                .find('.carousel-image')
                 .first()
                 .detach()
                 .appendTo($images);
@@ -30,7 +30,7 @@ $(function () {
         $dummy
             .animate({
                 'margin-left': '-=' + imageWidth
-            });
+            }, 'fast');
     });
 
     $moveLeft.on('click', function () {
@@ -41,7 +41,7 @@ $(function () {
             $dummy.css('margin-left', '-=' + imageWidth);
 
             $images
-                .find('.image-class')
+                .find('.carousel-image')
                 .last()
                 .detach()
                 .insertAfter($dummy);
@@ -53,18 +53,18 @@ $(function () {
         $dummy
             .animate({
                 'margin-left': '+=' + imageWidth
-            });
+            }, 'fast');
     });
 
-    $('.image-class').on('mouseover', function () {
-        // $(this).find('.image-overlay').show();
+    $('.carousel-image').on('mouseenter', function () {
+        $(this).find('.carousel-caption').stop(true, true).slideDown();
 
-        $(this).find('img').css('-webkit-filter', 'grayscale(0%)');
+        // $(this).find('img').css('-webkit-filter', 'grayscale(0%)');
     });
 
-    $('.image-class').on('mouseout', function () {
-        // $(this).find('.image-overlay').hide();
+    $('.carousel-image').on('mouseleave', function () {
+        $(this).find('.carousel-caption').stop(true, true).slideUp();
 
-        $(this).find('img').css('-webkit-filter', 'grayscale(100%)');
+        // $(this).find('img').css('-webkit-filter', 'grayscale(100%)');
     });
 });

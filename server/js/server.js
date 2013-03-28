@@ -32,7 +32,7 @@ require('./passport.js');
             if(req.url === '/') {
                 if(!seenIPs[req.connection.remoteAddress]) {
                     seenIPs[req.connection.remoteAddress] = true;
-                    console.info(req.connection.remoteAddress, new Date());
+                    console.info(req.connection.remoteAddress, new Date(), req.headers['user-agent']);
                 }
             }
 

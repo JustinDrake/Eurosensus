@@ -176,9 +176,11 @@
         <span id='carousel-images'>
             <span id='carousel-dummy'></span>
             {{#ECIs}}
-                <span class='image-class'>
-                    <img src='img/initiatives/{{image}}' target='{{id}}'/>
-                    <h2 class='image-overlay'>Test</h2>
+                <span class='carousel-image'>
+                    <div class='carousel-caption' style='display:none'>
+                         <h4>{{shortName}}</h4>
+                    </div>
+                    <img src='img/initiatives-300/{{image}}' target='{{id}}'>
                 </span>
             {{/ECIs}}
         </span>

@@ -1,5 +1,5 @@
 .bandeau {
-    margin-top: 41px;
+    margin-top: 40px;
     padding-bottom: 0px;
     background-color: #303030;
 }
@@ -18,23 +18,24 @@
     width: 960px;
     height: 119px;
     display: inline-block;
-    overflow: hidden;
     white-space: nowrap;
     font-size: 0px;
     background-color: white;
-    border: 2px solid #282828;
+    overflow: hidden;
 }
 
-#carousel-images .image-class {
+.carousel-image {
     display: inline-block;
+    position: relative;
+    text-align: center;
     width: 192px;
     height: 119px;
+    vertical-align: top;
 }
 
-#carousel-images img {
+.carousel-image img {
     max-width: 192px;
     max-height: 119px;
-    -webkit-filter: grayscale(100%);
 }
 
 #carousel .move {
@@ -67,15 +68,4 @@
 
 #carousel-move-right {
     margin-left: 15px;
-}
-
-.image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 192px;
-    height: 119px;
-    display: none;
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: 0;
 }

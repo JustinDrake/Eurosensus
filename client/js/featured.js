@@ -1,9 +1,10 @@
 $(function () {
-    $dummy = $('#featured-dummy');
+    var $dummy = $('#featured-dummy');
 
     // Featured initiative animation
-    $('#carousel img[target]').on('click', function () {
-        $target = $('#' + $(this).attr('target'));
+    $('#carousel .carousel-image').on('click', function () {
+        var $image = $(this).find('img');
+        var $target = $('#' + $image.attr('target'));
 
         $dummy
             .stop(true, true)
@@ -18,7 +19,7 @@ $(function () {
     });
 
     var $ecocide = $('.featured').first();
-    $daysLeft = $ecocide.find('.days-left');
+    var $daysLeft = $ecocide.find('.days-left');
     var $totalVotes = $ecocide.find('.total-votes');
 
     function formatNumber(number) {
