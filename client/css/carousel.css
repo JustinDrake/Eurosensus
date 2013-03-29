@@ -40,6 +40,7 @@
 .carousel-image img {
     max-width: 192px;
     max-height: 119px;
+    -webkit-filter: grayscale(100%);
 }
 
 #carousel .move {
@@ -76,7 +77,8 @@
 }
 
 .carousel-caption {
-    padding: 5px;
+    padding: 8px;
+    z-index: 1;
 }
 
 .carousel-caption h4 {
