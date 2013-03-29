@@ -10,16 +10,19 @@ $(function () {
     var rightOffset = $images.children().length - displayedImages - 1;
     var imageWidth = $images.find('.carousel-image').first().css('width');
 
-    $('#carousel img').load(function () {
+    $('#carousel img').on('load', function () {
         var $image = $(this);
 
         $image.css('margin-top', (119 - $image.height()) / 2);
     });
 
-    $('.featured-image').load(function () {
+    $('.featured-image').on('load', function () {
         var $image = $(this);
+        var height = $image.height();
 
-        $image.css('margin-top', (266 - $image.height()) / 2);
+        $image.css('margin-top', (266 - height) / 2);
+
+        console.log(height);
     });
 
     $moveRight.on('click', function () {

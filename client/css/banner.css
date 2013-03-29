@@ -1,0 +1,13 @@
+#banner {
+    margin-top: 40px;
+    background-color: #303030;
+    min-width: 960px;
+    padding: 0px;
+}
+
+#banner hr {
+    border-top: 1px solid #282828;
+    border-bottom: 1px solid #222222;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}

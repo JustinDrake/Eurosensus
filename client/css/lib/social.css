@@ -32,8 +32,8 @@ a.network-badge.network-badge-twitter:before, #site-footer .social li a.twitter:
 }
 @font-face {
     font-family:'Mashicons';
-    src:url('./../font/mashicons-webfont.eot');
-    src:url('./../font/mashicons-webfont.eot?#iefix') format("embedded-opentype"), url('./../font/mashicons-webfont.svg') format("svg"), url('./../font/mashicons-webfont.woff') format("woff");
+    src:url('../../font/mashicons-webfont.eot');
+    src:url('../../font/mashicons-webfont.eot?#iefix') format("embedded-opentype"), url('../../font/mashicons-webfont.svg') format("svg"), url('../../font/mashicons-webfont.woff') format("woff");
     font-weight:normal;
     font-style:normal
 }

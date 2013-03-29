@@ -2,6 +2,7 @@
     cursor: pointer;
     color: whitesmoke;
     margin-bottom: 0px;
+    font-weight: 300;
 }
 
 .featured-website {
@@ -22,8 +23,6 @@
 .featured-video {
     border: 1px solid #282828;
 }
-
-
 
 #featured-container {
     width: 960px;

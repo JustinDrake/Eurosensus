@@ -14,13 +14,16 @@
     <link href='css/lib/font-awesome.css' rel='stylesheet'>
     <link href='css/lib/social.css' rel='stylesheet'>
 
+    <link href='css/banner.css' rel='stylesheet'>
     <link href='css/carousel.css' rel='stylesheet'>
+    <link href='css/featured.css' rel='stylesheet'>
+
     <link href='css/footer.css' rel='stylesheet'>
     <link href='css/main.css' rel='stylesheet'>
     <link href='css/animation.css' rel='stylesheet'>
     <link href='css/progressBars.css' rel='stylesheet'>
     <link href='css/login.css' rel='stylesheet'>
-    <link href='css/featured.css' rel='stylesheet'>
+
 </head>
 
 <body>
@@ -51,13 +54,84 @@
 
     <div id='banner'>
         <hr>
-        <center><div id='carousel' class='container'></div></center>
+        <center>
+            <div id='carousel' class='container'></div>
+        </center>
         <hr>
-        <div class='container' id='featured-container'>
-            <div id='featured-dummy'></div>
-        </div>
+        <div id='featured-container' class='container'></div>
         <hr>
     </div>
+
+    <script type='mustache' id='template-featured'>
+        <div id='featured-dummy'></div>
+        {{#ECIs}}
+            <div class='featured' id='{{id}}'>
+                <div class='row'>
+                    <div class='span12 title'>
+                        <h3 class='featured-title'>{{name}}<a class='btn pull-right featured-follow'><i class='icon-star'></i> Follow</a></h3>
+                        <h4 class='featured-website'>{{site}}</h4>
+                    </div>
+                </div>
+
+                <div class='row'>
+                    <div class='span6'>
+                        <center>
+                            <span class='featured-image-container'>
+                                <img class='featured-image' src='img/initiatives/{{image}}'></img>
+                            </span>
+                        </center>
+                    </div>
+
+                    <div class='span6'>
+                        <p class=' featured-description lead'>{{caption}}</p>
+                    </div>
+
+                    <div class='bar-container'>
+                        <div class='span3 total-votes'>
+                            <center class='bar-label'><b></b> votes</center>
+                            <div class='progress progress-striped progress-success'>
+                                <div class='bar'></div>
+                            </div>
+                        </div>
+
+                        <div class='span3 days-left'>
+                            <center class='bar-label'><b>{{#daysLeft}}{{/daysLeft}}</b> days left</center>
+                            <div class='progress progress-striped'>
+                                <div class='bar' style='width: {{#timeLeftPercentage}}{{/timeLeftPercentage}}%'></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <center>
+                        <div class='share-buttons'>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share facebook' data-shares='?'>Share</a>
+                            </div>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share twitter' data-shares='?'>Tweet</a>
+                            </div>
+                            <div class='share-button-boxy'>
+                                <a class='social-stub social-share google_plus' data-shares='?'>+1</a>
+                            </div>
+                        </div>
+                    </center>
+                </div>
+            </div>
+        {{/ECIs}}
+    </script>
+
+    <script type='OLD'>
+                        {{#youtube}}
+                            <iframe class='featured-video' width='460' height='259' src='http://www.youtube.com/embed/{{youtube}}?modestbranding=1;autohide=1;showinfo=0;rel=0' frameborder='0' allowfullscreen></iframe>
+                        {{/youtube}}
+                        {{^youtube}}
+                            <center>
+                                <span class='featured-image-container'>
+                                    <img class='featured-image' src='img/initiatives/{{image}}'></img>
+                                </span>
+                            </center>
+                        {{/youtube}}
+    </script>
 
     <script type='mustache' id='template-carousel'>
         <span>
@@ -77,7 +151,6 @@
                 </span>
             {{/ECIs}}
         </span>
-
     </script>
 
     <div class='container'>
@@ -181,7 +254,7 @@
     </div>
 
     <!-- Footer -->
-<!--     <footer class='footer'>
+    <footer class='footer'>
         <div class='container'>
             <ul class='footer-links'>
                 <li><a>Blog</a></li>
@@ -191,7 +264,7 @@
                 <li><a>Authors</a></li>
             </ul>
         </div>
-    </footer> -->
+    </footer>
 
     <script type='mustache' id='thumbnail'>
         <div class='thumbnail'>
@@ -201,73 +274,6 @@
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             </div>
         </div>
-    </script>
-
-    <script type='mustache' id='template-featured'>
-        <div id='featured-dummy'></div>
-        {{#ECIs}}
-            <div class='featured' id='{{id}}'>
-                <div class='row'>
-                    <div class='span12 title'>
-                        <h3 class='featured-title'>{{name}}<a class='btn pull-right featured-follow'><i class='icon-star'></i> Follow</a></h3>
-
-                        <h4 class='featured-website'>{{site}}</h4>
-                    </div>
-                </div>
-
-                <div class='row'>
-                    <!-- YouTube video or image -->
-                    <div class='span6'>
-                        {{#youtube}}
-                            <iframe class='featured-video' width='460' height='259' src='http://www.youtube.com/embed/{{youtube}}?modestbranding=1;autohide=1;showinfo=0;rel=0' frameborder='0' allowfullscreen></iframe>
-                        {{/youtube}}
-                        {{^youtube}}
-                            <center>
-                                <span class='featured-image-container'>
-                                    <img class='featured-image' src='img/initiatives/{{image}}'></img>
-                                </span>
-                            </center>
-                        {{/youtube}}
-                    </div>
-
-                    <!-- Caption -->
-                    <div class='span6'>
-                        <p class=' featured-description lead'>{{caption}}</p>
-                    </div>
-
-                    <div class='bar-container'>
-                        <!-- Progress bars -->
-                        <div class='span3 total-votes'>
-                            <center class='bar-label'><b></b> votes</center>
-                            <div class='progress progress-striped progress-success'>
-                                <div class='bar'></div>
-                            </div>
-                        </div>
-
-                        <div class='span3 days-left'>
-                            <center class='bar-label'><b>{{#daysLeft}}{{/daysLeft}}</b> days left</center>
-                            <div class='progress progress-striped'>
-                                <div class='bar' style='width: {{#timeLeftPercentage}}{{/timeLeftPercentage}}%'></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <center>
-                        <div class='share-buttons'>
-                            <div class='share-button-boxy'>
-                                <a class='social-stub social-share facebook' data-shares='?'>Share</a>
-                            </div>
-                            <div class='share-button-boxy'>
-                                <a class='social-stub social-share twitter' data-shares='?'>Tweet</a>
-                            </div>
-                            <div class='share-button-boxy'>
-                                <a class='social-stub social-share google_plus' data-shares='?'>+1</a>
-                            </div>
-                        </div>
-                    </center>
-                </div>
-            </div>
-        {{/ECIs}}
     </script>
 
     <!-- Libraries -->
