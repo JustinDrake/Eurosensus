@@ -56,6 +56,7 @@
 }
 
 #carousel .move:hover {
+    cursor: pointer;
     text-decoration: none;
     opacity: 0.75;
     outline: 0;
@@ -68,4 +69,12 @@
 
 #carousel-move-right {
     margin-left: 15px;
+}
+
+.carousel-caption {
+    padding: 5px;
+}
+
+.carousel-caption h4 {
+    font-size: 15px;
 }

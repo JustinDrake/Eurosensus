@@ -10,6 +10,12 @@ $(function () {
     var rightOffset = $images.children().length - displayedImages - 1;
     var imageWidth = $images.find('.carousel-image').first().css('width');
 
+    $('#carousel img').load(function () {
+        var $image = $(this);
+
+        $image.css('margin-top', (119 - $image.height()) / 2);
+    });
+
     $moveRight.on('click', function () {
         $dummy
             .stop(true, true);
