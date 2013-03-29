@@ -1,48 +1,68 @@
-.bandeau {
+#banner {
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 40px;
-    padding-bottom: 0px;
     background-color: #303030;
+    min-width: 960px;
+    padding: 0px;
 }
 
-.bandeau hr {
+#banner hr {
     border-top: 1px solid #282828;
     border-bottom: 1px solid #222222;
-    margin: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
 }
 
 #carousel {
-    padding: 12px;
+    margin: 0px;
+    padding: 30px 0px 30px 0px;
 }
 
 #carousel-images {
+    margin-left: -20px;
     width: 960px;
-    height: 129px;
     display: inline-block;
-    white-space: nowrap;
+    white-space: nowrap; /* Ignore the inserted spaces in HTML */
     font-size: 0px;
-    background-color: white;
-    overflow: hidden;
-    border: 10px solid #282828;
+    background-color: white; /* For transparent pictures */
+    overflow: hidden; /* Only show 5 images */
+    border: 10px solid #282828; /* Nice black border around */
     border-radius: 10px;
 }
 
-.carousel-image {
-    display: inline-block;
-    position: relative;
-    text-align: center;
+#carousel-images .carousel-image {
     width: 192px;
     height: 129px;
+    display: inline-block;
+    position: relative;
     vertical-align: top;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .carousel-image img {
     max-width: 192px;
-    max-height: 119px;
+    max-height: 129px;
     -webkit-filter: grayscale(100%);
+    padding-top: 5px;
 }
 
+.carousel-image img.active {
+    -webkit-filter: grayscale(0%) !important;
+}
+
+/* Captions */
+.carousel-caption {
+    padding: 5px;
+    z-index: 1;
+}
+
+.carousel-caption h4 {
+    font-size: 15px;
+}
+
+/* Move buttons: total width is 46px */
 #carousel .move {
     width: 40px;
     height: 40px;
@@ -56,7 +76,7 @@
     border-radius: 23px;
     opacity: 0.5;
     position: absolute;
-    margin-top: 55px;
+    margin-top: 56.5px; /* (119 + 20 + 20 - 46) / 2 */
     -webkit-user-select: none;
 }
 
@@ -67,20 +87,10 @@
     outline: 0;
 }
 
-/* ??? Need to review */
 #carousel-move-left {
-    margin-left: -60px;
+    margin-left: -86px; /* 66 = 46 + 20 + 20 */
 }
 
 #carousel-move-right {
-    margin-left: 15px;
-}
-
-.carousel-caption {
-    padding: 8px;
-    z-index: 1;
-}
-
-.carousel-caption h4 {
-    font-size: 15px;
+    margin-left: 980px; /* 980 = 960 + 20 */
 }

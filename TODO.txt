@@ -1,0 +1,3 @@
+DONE -Fix the hr margin/padding
+DONE -Add a lib folder inside css
+-Fix that the right carousel button goes down on small windows

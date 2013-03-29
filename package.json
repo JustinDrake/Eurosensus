@@ -1,10 +1,10 @@
 {
   "name": "Eurosensus",
   "domains": [
-    "eurosensus.com",
-    "www.eurosensus.com",
-    "eurocensus.com",
-    "www.eurocensus.com"
+    "eurosensus.org",
+    "www.eurosensus.org",
+    "eurocensus.org",
+    "www.eurocensus.org"
   ],
   "bundleDependencies": [
     "express"
@@ -13,7 +13,7 @@
   "scripts": {
     "start": "node server/js/server.js"
   },
-  "version": "0.0.0-2",
+  "version": "0.0.0-4",
   "engines": {
     "node": "0.8.x"
   },

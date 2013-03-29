@@ -4,20 +4,21 @@
     <title>Eurosensus</title>
 
     <script>
-        // Cleanup the URL ??? Still have a URL glitch
+        // Cleanup the URL on Facebook login ??? Still have a URL glitch
         if(window.location.hash !== '') {
             history.pushState('', document.title, window.location.pathname);
         }
     </script>
 
-    <link href='css/bootstrap.css' rel='stylesheet'>
-    <link href='css/font-awesome.css' rel='stylesheet'>
+    <link href='css/lib/bootstrap.css' rel='stylesheet'>
+    <link href='css/lib/font-awesome.css' rel='stylesheet'>
+    <link href='css/lib/social.css' rel='stylesheet'>
+
     <link href='css/carousel.css' rel='stylesheet'>
     <link href='css/footer.css' rel='stylesheet'>
     <link href='css/main.css' rel='stylesheet'>
     <link href='css/animation.css' rel='stylesheet'>
     <link href='css/progressBars.css' rel='stylesheet'>
-    <link href='css/social.css' rel='stylesheet'>
     <link href='css/login.css' rel='stylesheet'>
     <link href='css/featured.css' rel='stylesheet'>
 </head>
@@ -48,18 +49,36 @@
         </div>
     </div>
 
-    <div class='bandeau'>
+    <div id='banner'>
         <hr>
-        <center>
-            <!-- ??? See http://jsfiddle.net/WfdFY/2/ -->
-            <div id='carousel'></div>
-        </center>
+        <center><div id='carousel' class='container'></div></center>
         <hr>
         <div class='container' id='featured-container'>
             <div id='featured-dummy'></div>
         </div>
         <hr>
     </div>
+
+    <script type='mustache' id='template-carousel'>
+        <span>
+            <a id='carousel-move-left' class='move'>‹</a>
+        </span>
+        <span>
+            <a id='carousel-move-right' class='move'>›</a>
+        </span>
+        <span id='carousel-images'>
+            <span id='carousel-dummy'></span>
+            {{#ECIs}}
+                <span class='carousel-image'>
+                    <img src='img/initiatives-300/{{image}}' target='{{id}}'/>
+                    <div class='carousel-caption' style='display:none'>
+                        <h4>{{shortName}}</h4>
+                    </div>
+                </span>
+            {{/ECIs}}
+        </span>
+
+    </script>
 
     <div class='container'>
         <!-- Other initiatives -->
@@ -161,6 +180,19 @@
         </div>
     </div>
 
+    <!-- Footer -->
+<!--     <footer class='footer'>
+        <div class='container'>
+            <ul class='footer-links'>
+                <li><a>Blog</a></li>
+                <li class='muted'>·</li>
+                <li><a>About</a></li>
+                <li class='muted'>·</li>
+                <li><a>Authors</a></li>
+            </ul>
+        </div>
+    </footer> -->
+
     <script type='mustache' id='thumbnail'>
         <div class='thumbnail'>
             <img style='width: 300px; height: 200px;' src='img/placeholder.png'/>
@@ -169,22 +201,6 @@
                 <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
             </div>
         </div>
-    </script>
-
-    <script type='mustache' id='template-carousel'>
-        <a id='carousel-move-left' class='move'>‹</a>
-        <span id='carousel-images'>
-            <span id='carousel-dummy'></span>
-            {{#ECIs}}
-                <span class='carousel-image'>
-                    <div class='carousel-caption' style='display:none'>
-                         <h4>{{shortName}}</h4>
-                    </div>
-                    <img src='img/initiatives-300/{{image}}' target='{{id}}'>
-                </span>
-            {{/ECIs}}
-        </span>
-        <a id='carousel-move-right' class='move'>›</a>
     </script>
 
     <script type='mustache' id='template-featured'>
@@ -253,19 +269,6 @@
             </div>
         {{/ECIs}}
     </script>
-
-    <!-- Footer -->
-    <footer class='footer'>
-        <div class='container'>
-            <ul class='footer-links'>
-                <li><a>Blog</a></li>
-                <li class='muted'>·</li>
-                <li><a>About</a></li>
-                <li class='muted'>·</li>
-                <li><a>Authors</a></li>
-            </ul>
-        </div>
-    </footer>
 
     <!-- Libraries -->
     <script src='js/lib/jquery.js'></script>

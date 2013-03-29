@@ -21,7 +21,7 @@ var data = {
             site: '30kmh.eu',
             caption: '30 km/h limits are an inexpensive and popular way to improve safety, cut pollution and encourage smarter travel choices.',
             youtube: '',
-            image: '30kmh.png',
+            image: '30kmh.jpg',
             end: '2013-11-01'
         },
         {

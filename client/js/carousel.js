@@ -42,7 +42,7 @@ $(function () {
         $dummy
             .animate({
                 'margin-left': '-=' + imageWidth
-            }, 150);
+            }, 175);
     });
 
     $moveLeft.on('click', function () {

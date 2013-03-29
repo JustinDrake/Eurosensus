@@ -3,7 +3,13 @@ $(function () {
 
     // Featured initiative animation
     $('#carousel .carousel-image').on('click', function () {
-        var $image = $(this).find('img');
+        // Remove the active class for all carousel images
+        $('#carousel').find('img').removeClass('active');
+
+        var $image = $(this)
+            .find('img')
+            .addClass('active');
+
         var $target = $('#' + $image.attr('target'));
 
         $dummy
@@ -12,6 +18,9 @@ $(function () {
                 'margin-top': '+=' + ($dummy.position().top - $target.position().top) + 'px'
             });
     });
+
+    // Add active class to first image
+    $('#carousel').find('img').first().addClass('active');
 
     // Bring user to the detailed information page
     $('.featured-title').on('click', function () {
@@ -45,5 +54,21 @@ $(function () {
 
     $('#featured-container').on('click', '.featured-website', function () {
         window.open('http://' + $(this).text(), '_blank');
+    });
+
+    $('html').keydown(function (e) {
+        var keyCode = e.keyCode || e.which;
+        var arrow = {
+            left: 37,
+            right: 39
+        };
+
+        if(keyCode === arrow.left) {
+            $('#carousel-move-left').click();
+        }
+
+        if(keyCode === arrow.right) {
+            $('#carousel-move-right').click();
+        }
     });
 });
