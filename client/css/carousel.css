@@ -16,12 +16,14 @@
 
 #carousel-images {
     width: 960px;
-    height: 119px;
+    height: 129px;
     display: inline-block;
     white-space: nowrap;
     font-size: 0px;
     background-color: white;
     overflow: hidden;
+    border: 10px solid #282828;
+    border-radius: 10px;
 }
 
 .carousel-image {
@@ -29,8 +31,10 @@
     position: relative;
     text-align: center;
     width: 192px;
-    height: 119px;
+    height: 129px;
     vertical-align: top;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .carousel-image img {
@@ -44,10 +48,10 @@
     font-size: 60px;
     font-weight: 100;
     line-height: 30px;
-    color: #ffffff;
+    color: white;
     text-align: center;
     background: #222222;
-    border: 3px solid #ffffff;
+    border: 3px solid white;
     border-radius: 23px;
     opacity: 0.5;
     position: absolute;
