@@ -36,7 +36,7 @@ $(function () {
         $dummy
             .animate({
                 'margin-left': '-=' + imageWidth
-            }, 'fast');
+            }, 150);
     });
 
     $moveLeft.on('click', function () {
@@ -59,17 +59,17 @@ $(function () {
         $dummy
             .animate({
                 'margin-left': '+=' + imageWidth
-            }, 'fast');
+            }, 150);
     });
 
     $('.carousel-image').on('mouseenter', function () {
-        $(this).find('.carousel-caption').stop(true, true).slideDown();
+        $(this).find('.carousel-caption').stop(true, true).slideDown('fast');
 
         // $(this).find('img').css('-webkit-filter', 'grayscale(0%)');
     });
 
     $('.carousel-image').on('mouseleave', function () {
-        $(this).find('.carousel-caption').stop(true, true).slideUp();
+        $(this).find('.carousel-caption').stop(true, true).slideUp('fast');
 
         // $(this).find('img').css('-webkit-filter', 'grayscale(100%)');
     });

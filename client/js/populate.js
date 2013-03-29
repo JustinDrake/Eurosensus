@@ -18,7 +18,7 @@ $(function () {
     }
 
     // Shuffle the initiatives
-    data.ECIs = (data.ECIs);
+    data.ECIs = shuffle(data.ECIs);
 
     $container.html(Mustache.to_html(templateFeatured, data));
     $('#carousel').html(Mustache.to_html(templateCarousel, data));
