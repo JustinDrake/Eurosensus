@@ -18,48 +18,48 @@ function ipAddress(callback) {
     return ip;
 }
 
-require('./passport.js');
+// require('./passport.js');
 
 (function createServer() {
     server = express()
-        .use(express.cookieParser())
-        .use(express.session({secret: 'EuroSensus rocks!'}))
-        .use(passport.initialize())
-        .use(passport.session())
+        // .use(express.cookieParser())
+        // .use(express.session({secret: 'EuroSensus rocks!'}))
+        // .use(passport.initialize())
+        // .use(passport.session())
         .use(express.bodyParser())
         .use(express.compress())
-        .use(function (req, res, next) {
-            if(req.url === '/') {
-                if(!seenIPs[req.connection.remoteAddress]) {
-                    seenIPs[req.connection.remoteAddress] = true;
-                    console.info(req.connection.remoteAddress, new Date(), req.headers['user-agent']);
-                }
-            }
+        // .use(function (req, res, next) {
+        //     if(req.url === '/') {
+        //         if(!seenIPs[req.connection.remoteAddress]) {
+        //             seenIPs[req.connection.remoteAddress] = true;
+        //             console.info(req.connection.remoteAddress, new Date(), req.headers['user-agent']);
+        //         }
+        //     }
 
-            next();
-        })
+        //     next();
+        // })
         .use(express.static(__dirname + '/../../client/'));
 
     // Create the HTTP server
     http
         .createServer(server)
-        .listen(2000, ipAddress());
+        .listen(2000);
 }());
 
-server.get('/auth/facebook', passport.authenticate('facebook'));
+// server.get('/auth/facebook', passport.authenticate('facebook'));
 
-server.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/' }), function(req, res) {
-    res.redirect('/');
-});
+// server.get('/auth/facebook/callback', passport.authenticate('facebook', { successRedirect: '/', failureRedirect: '/' }), function(req, res) {
+//     res.redirect('/');
+// });
 
-server.post('/username', function (req, res) {
-    res.send(req.user && req.user.displayName);
-});
+// server.post('/username', function (req, res) {
+//     res.send(req.user && req.user.displayName);
+// });
 
-server.post('/logout', function (req, res) {
-    req.logout();
-    res.send('OK');
-});
+// server.post('/logout', function (req, res) {
+//     req.logout();
+//     res.send('OK');
+// });
 
 module.exports = {
     server: server

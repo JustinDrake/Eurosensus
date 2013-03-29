@@ -33,15 +33,15 @@ $(function () {
         return result;
     }
 
-    $.post('/ecocide', function (data) {
-        // Update text
-        $daysLeft.find('b').html(data.daysLeft);
-        $totalVotes.find('b').html(formatNumber(data.totalVotes));
+    // $.post('/ecocide', function (data) {
+    //     // Update text
+    //     $daysLeft.find('b').html(data.daysLeft);
+    //     $totalVotes.find('b').html(formatNumber(data.totalVotes));
 
-        // Update progress bars
-        $daysLeft.find('.bar').css('width', (data.daysLeft / 3.56) + '%');
-        $totalVotes.find('.bar').css('width', (data.totalVotes / 10000) + '%');
-    });
+    //     // Update progress bars
+    //     $daysLeft.find('.bar').css('width', (data.daysLeft / 3.56) + '%');
+    //     $totalVotes.find('.bar').css('width', (data.totalVotes / 10000) + '%');
+    // });
 
     $('#featured-container').on('click', '.featured-website', function () {
         window.open('http://' + $(this).text(), '_blank');

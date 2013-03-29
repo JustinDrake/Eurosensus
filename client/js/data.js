@@ -1,4 +1,18 @@
+function timeLeftDays(end) {
+    return ((new Date(end)) - (new Date())) / 1000 / 60 / 60 / 24;
+}
+
 var data = {
+    daysLeft: function () {
+        return function () {
+            return Math.floor(timeLeftDays(this.end));
+        };
+    },
+    timeLeftPercentage: function () {
+        return function () {
+            return timeLeftDays(this.end) / 365 * 100;
+        };
+    },
     ECIs: [
         {
             id: '30kmh',

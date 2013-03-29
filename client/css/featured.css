@@ -23,14 +23,27 @@
     border: 1px solid #282828;
 }
 
-.featured-image {
-    max-height: 266px; /* 259 + 7 */
-    min-height: 266px;
-    max-width: 460px;
-}
+
 
 #featured-container {
     width: 960px;
     height: 359px;
     overflow: hidden;
+}
+
+.featured-image-container {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    width: 460px;
+    height: 266px;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+.featured-image {
+    max-width: 460px;
+    max-height: 266px; /* 259 + 7 */
 }

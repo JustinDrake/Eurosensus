@@ -1,0 +1,26 @@
+{
+  "name": "Eurosensus",
+  "domains": [
+    "eurosensus.com",
+    "www.eurosensus.com",
+    "eurocensus.com",
+    "www.eurocensus.com"
+  ],
+  "bundleDependencies": [
+    "express"
+  ],
+  "subdomain": "Eurosensus",
+  "scripts": {
+    "start": "node server/js/server.js"
+  },
+  "version": "0.0.0-2",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "contributors": [
+    {
+      "name": "Justin Drake",
+      "email": "drakefjustin@gmail.com"
+    }
+  ]
+}

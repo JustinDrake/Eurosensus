@@ -16,6 +16,12 @@ $(function () {
         $image.css('margin-top', (119 - $image.height()) / 2);
     });
 
+    $('.featured-image').load(function () {
+        var $image = $(this);
+
+        $image.css('margin-top', (266 - $image.height()) / 2);
+    });
+
     $moveRight.on('click', function () {
         $dummy
             .stop(true, true);

@@ -207,7 +207,9 @@
                         {{/youtube}}
                         {{^youtube}}
                             <center>
-                                <img class='featured-image' src='img/initiatives/{{image}}'></img>
+                                <span class='featured-image-container'>
+                                    <img class='featured-image' src='img/initiatives/{{image}}'></img>
+                                </span>
                             </center>
                         {{/youtube}}
                     </div>
@@ -227,9 +229,9 @@
                         </div>
 
                         <div class='span3 days-left'>
-                            <center class='bar-label'><b></b> days left</center>
+                            <center class='bar-label'><b>{{#daysLeft}}{{/daysLeft}}</b> days left</center>
                             <div class='progress progress-striped'>
-                                <div class='bar'></div>
+                                <div class='bar' style='width: {{#timeLeftPercentage}}{{/timeLeftPercentage}}%'></div>
                             </div>
                         </div>
                     </div>
