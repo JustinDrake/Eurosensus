@@ -6,14 +6,6 @@ table {
     margin-bottom: 0px !important;
 }
 
-.container.focus {
-    margin-top: 15px;
-}
-
-.focus img {
-    height: 285px;
-}
-
 .center {
     margin: 0 auto;
     display: table;
@@ -30,13 +22,4 @@ table {
 
 form {
     margin-bottom: 0px;
-}
-
-.social-share {
-    -webkit-user-select: none;
-    cursor: pointer;
-}
-
-.share-buttons {
-    margin-top: 150px;
 }

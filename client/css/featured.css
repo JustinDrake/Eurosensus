@@ -1,3 +1,13 @@
+#featured-container {
+    height: 390px;
+    overflow: hidden;
+}
+
+.featured {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .featured-title {
     cursor: pointer;
     color: whitesmoke;
@@ -10,6 +20,7 @@
     color: whitesmoke;
     margin-top: -5px;
     margin-bottom: 20px;
+    font-weight: 200;
 }
 
 .featured-website:hover {
@@ -24,13 +35,7 @@
     border: 1px solid #282828;
 }
 
-#featured-container {
-    width: 960px;
-    height: 359px;
-    overflow: hidden;
-}
-
-.featured-image-container {
+.featured-image {
     display: inline-block;
     position: relative;
     text-align: center;
@@ -42,7 +47,30 @@
     background-color: white;
 }
 
-.featured-image {
+.featured-image img{
     max-width: 460px;
     max-height: 266px; /* 259 + 7 */
+}
+
+.bar-label {
+    margin-bottom: 5px;
+    color: whitesmoke;
+}
+
+.progress {
+    height: 14px;
+    border-radius: 7px;
+}
+
+.bar-container .span3 {
+    margin-bottom: 15px;
+}
+
+.social-share {
+    -webkit-user-select: none;
+    cursor: pointer;
+}
+
+.share-buttons {
+    width: 340px; /* To center the buttons */
 }

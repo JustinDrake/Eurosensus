@@ -1,11 +1,11 @@
 #carousel {
     margin: 0px;
-    padding: 30px 0px 30px 0px;
+    padding: 20px 0px 20px 0px;
 }
 
 #carousel-images {
-    margin-left: -20px;
-    width: 960px;
+    margin-left: -10px;
+    width: 940px;
     display: inline-block;
     white-space: nowrap; /* Ignore the inserted spaces in HTML */
     font-size: 0px;
@@ -16,7 +16,7 @@
 }
 
 #carousel-images .carousel-image {
-    width: 192px;
+    width: 188px;
     height: 129px;
     display: inline-block;
     position: relative;
@@ -26,7 +26,7 @@
 }
 
 #carousel-images img {
-    max-width: 192px;
+    max-width: 188px;
     max-height: 129px;
     -webkit-filter: grayscale(100%);
     padding-top: 5px;
@@ -75,5 +75,5 @@
 }
 
 #carousel-move-right {
-    margin-left: 980px; /* 980 = 960 + 20 */
+    margin-left: 960px; /* 960 = 940 + 20 */
 }

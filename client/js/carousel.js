@@ -16,7 +16,7 @@ $(function () {
         $image.css('margin-top', (119 - $image.height()) / 2);
     });
 
-    $('.featured-image').on('load', function () {
+    $('.featured-image img').on('load', function () {
         var $image = $(this);
         var height = $image.height();
 

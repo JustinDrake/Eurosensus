@@ -66,43 +66,39 @@
         <div id='featured-dummy'></div>
         {{#ECIs}}
             <div class='featured' id='{{id}}'>
-                <div class='row'>
-                    <div class='span12 title'>
-                        <h3 class='featured-title'>{{name}}<a class='btn pull-right featured-follow'><i class='icon-star'></i> Follow</a></h3>
-                        <h4 class='featured-website'>{{site}}</h4>
-                    </div>
+                <div class='title'>
+                    <a class='btn pull-right featured-follow'><i class='icon-star'></i> Follow</a>
+                    <h3 class='featured-title'>{{name}}</h3>
+                    <h4 class='featured-website'>{{site}}</h4>
                 </div>
 
                 <div class='row'>
                     <div class='span6'>
-                        <center>
-                            <span class='featured-image-container'>
-                                <img class='featured-image' src='img/initiatives/{{image}}'></img>
-                            </span>
-                        </center>
+                        <span class='featured-image'>
+                            <img src='img/initiatives/{{image}}'/>
+                        </span>
                     </div>
-
                     <div class='span6'>
-                        <p class=' featured-description lead'>{{caption}}</p>
+                        <p class='featured-description lead'>{{description}}</p>
                     </div>
 
                     <div class='bar-container'>
-                        <div class='span3 total-votes'>
-                            <center class='bar-label'><b></b> votes</center>
+                        <div class='span3'>
+                            <center class='bar-label'>votes</center>
                             <div class='progress progress-striped progress-success'>
                                 <div class='bar'></div>
                             </div>
                         </div>
 
-                        <div class='span3 days-left'>
-                            <center class='bar-label'><b>{{#daysLeft}}{{/daysLeft}}</b> days left</center>
+                        <div class='span3'>
+                            <center class='bar-label'>{{#daysLeft}}{{/daysLeft}} days left</center>
                             <div class='progress progress-striped'>
                                 <div class='bar' style='width: {{#timeLeftPercentage}}{{/timeLeftPercentage}}%'></div>
                             </div>
                         </div>
                     </div>
 
-                    <center>
+                    <div class='pull-right'>
                         <div class='share-buttons'>
                             <div class='share-button-boxy'>
                                 <a class='social-stub social-share facebook' data-shares='?'>Share</a>
@@ -114,11 +110,47 @@
                                 <a class='social-stub social-share google_plus' data-shares='?'>+1</a>
                             </div>
                         </div>
-                    </center>
+                    </div>
                 </div>
             </div>
         {{/ECIs}}
     </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <script type='OLD'>
                         {{#youtube}}
