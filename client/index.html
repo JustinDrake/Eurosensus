@@ -27,39 +27,183 @@
 </head>
 
 <body>
-    <div class='navbar navbar-fixed-top'>
-        <div class='navbar-inner'>
-            <div class='container'>
-                <div class='brand'>Eurosensus</div>
-                <div>
-                    <ul class='nav panes-nav'>
-                        <li id='take-tour'><a>Take the tour</a></li>
-                        <li><a>Register your initiative</a></li>
-                    </ul>
-                    <ul class='nav pull-right'>
-                        <li>
-                            <a id='facebook-name' style='display:none'></a>
-                        </li>
-                        <li>
-                            <a id='facebook-logout' style='display:none'>Logout</a>
-                        </li>
-                        <li>
-                            <a id='facebook-login' href='/auth/facebook'>Facebook login</a>
-                        </li>
-                    </ul>
+    <div id='wrap'>
+        <div class='navbar navbar-fixed-top'>
+            <div class='navbar-inner'>
+                <div class='container'>
+                    <div class='brand'>Eurosensus</div>
+                    <div>
+                        <ul class='nav panes-nav'>
+                            <li id='take-tour'><a>Take the tour</a></li>
+                            <li><a>Register your initiative</a></li>
+                        </ul>
+                        <ul class='nav pull-right'>
+                            <li>
+                                <a id='facebook-name' style='display:none'></a>
+                            </li>
+                            <li>
+                                <a id='facebook-logout' style='display:none'>Logout</a>
+                            </li>
+                            <li>
+                                <a id='facebook-login' href='/auth/facebook'>Facebook login</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div id='banner'>
+            <center>
+                <div id='carousel' class='container'></div>
+            </center>
+            <hr>
+        </div>
+        <div id='featured-container' class='container'></div>
+
+        <div class='banner'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='span12'>
+                        <legend>Initiators<i class='icon-chevron-down pull-right minifier'></i></legend>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='animation-container'>
+            <div class='container under-banner'>
+                <div class='row'>
+                    <div class='span4'>
+                        <span class='media'>
+                            <img class='media-object pull-left' src='img/placeholder2.png'/>
+                            <div class='media-body'>
+                                <h4 class='media-heading'>Maxime Beylot</h4>
+                                France, Bordeaux
+                            </div>
+                        </span>
+                    </div>
+                    <div class='span4'>
+                        <span class='media'>
+                            <img class='media-object pull-left' src='img/placeholder2.png'/>
+                            <div class='media-body'>
+                                <h4 class='media-heading'>Pierre Dagard</h4>
+                                France, Bordeaux
+                            </div>
+                        </span>
+                    </div>
+                    <div class='span4'>
+                        <span class='media'>
+                            <img class='media-object pull-left' src='img/placeholder2.png'/>
+                            <div class='media-body'>
+                                <h4 class='media-heading'>Justin Drake</h4>
+                                Cambridge, UK
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='banner'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='span12'>
+                        <legend>Description<i class='icon-chevron-down pull-right minifier'></i></legend>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='animation-container'>
+            <div class='container under-banner'>
+                <div class='row'>
+                    <div class='offset1 span10 long-description'>
+                        <p>It is the right for every child in Europe to have an icecream every week. Please help us reach 1 million signatures! Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='banner'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='span6'>
+                        <legend>Messages</legend>
+                    </div>
+                    <div class='span6'>
+                        <legend>Have your say<i class='icon-chevron-down pull-right minifier'></i></legend>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='animation-container'>
+            <div class='container under-banner'>
+                <div class='row'>
+                    <div class='span6'>
+                        <blockquote>
+                          <p>Il est évident que cette initiative, dans un context de réchauffement climatique, est la bienvenue.</p>
+                          <small>Maxime Beylot, <cite title='Source Title'>Acteur</cite></small>
+                        </blockquote>
+
+                        <blockquote>
+                          <p>Oui! J'adore les glaces.</p>
+                          <small>Pierre Dagard, <cite title='Source Title'>Politicien</cite></small>
+                        </blockquote>
+
+                        <blockquote>
+                          <p>How can I imagine my children without icecream?</p>
+                          <small>Justin Drake, <cite title='Source Title'>Informaticien</cite></small>
+                        </blockquote>
+                    </div>
+                    <div class='span6'>
+                            <div class='well'>
+                                <form class='form-horizontal'>
+                                    <div class='control-group'>
+                                        <label class='control-label'>Name</label>
+                                        <div class='controls'>
+                                            <input type='text' class='span3' value='Maxime Beylot' placeholder='Name' disabled/>
+                                        </div>
+                                    </div>
+                                    <div class='control-group'>
+                                        <label class='control-label'>Location</label>
+                                        <div class='controls'>
+                                            <input type='text' class='span3' value='Bordeaux, France' placeholder='Location' disabled/>
+                                        </div>
+                                    </div>
+                                    <div class='control-group'>
+                                        <label class='control-label'>Public message?</label>
+                                        <div class='controls'>
+                                            <textarea  rows='3' class='span3' placeholder='Optional public message...'></textarea>
+                                        </div>
+                                    </div>
+                                    <div class='controls'>
+                                        <span class='btn btn-primary'>Cast your vote now!</span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id='push'></div>
     </div>
 
-    <div id='banner'>
-        <hr>
-        <center>
-            <div id='carousel' class='container'></div>
-        </center>
-        <hr>
-        <div id='featured-container' class='container'></div>
-        <hr>
+    <div id='footer'>
+        <div class='container'>
+            <ul class='footer-links'>
+                <li><span>Eurosensus blog</span></li>
+                <li class='muted'>·</li>
+                <li><span>About</span></li>
+                <li class='muted'>·</li>
+                <li><span>Authors</span></li>
+            </ul>
+        </div>
     </div>
 
     <script type='mustache' id='template-featured'>
@@ -67,7 +211,7 @@
         {{#ECIs}}
             <div class='featured' id='{{id}}'>
                 <div class='title'>
-                    <a class='btn pull-right featured-follow'><i class='icon-star'></i> Follow</a>
+                    <a class='btn pull-right featured-follow'><i class='icon-heart'></i> Follow</a>
                     <h3 class='featured-title'>{{name}}</h3>
                     <h4 class='featured-website'>{{site}}</h4>
                 </div>
@@ -83,14 +227,14 @@
                     </div>
 
                     <div class='bar-container'>
-                        <div class='span3'>
-                            <center class='bar-label'>votes</center>
+                        <div class='span3 featured-votes'>
+                            <center class='bar-label'>Voting statistics not public</center>
                             <div class='progress progress-striped progress-success'>
-                                <div class='bar'></div>
+                                <div class='bar' style='width:100%;background-color:#777777'></div>
                             </div>
                         </div>
 
-                        <div class='span3'>
+                        <div class='span3 featured-days-left'>
                             <center class='bar-label'>{{#daysLeft}}{{/daysLeft}} days left</center>
                             <div class='progress progress-striped'>
                                 <div class='bar' style='width: {{#timeLeftPercentage}}{{/timeLeftPercentage}}%'></div>
@@ -115,42 +259,6 @@
             </div>
         {{/ECIs}}
     </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script type='OLD'>
                         {{#youtube}}
@@ -184,119 +292,6 @@
             {{/ECIs}}
         </span>
     </script>
-
-    <div class='container'>
-        <!-- Other initiatives -->
-        <div class='row' style='margin-top:15px'>
-            <div class='span4'>
-                <legend>Past initiatives</legend>
-                <div class='fixed first'>
-                    <div class='thumbnail'>
-                        <img style='width: 300px; height: 200px;' src='img/placeholder.png'/>
-                        <div class='caption'>
-                            <h3>Test 1</h3>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='fixed two'>
-                    <div class='thumbnail'>
-                        <img style='width: 300px; height: 200px;' src='img/placeholder.png'/>
-                        <div class='caption'>
-                            <h3>Test 2</h3>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='fixed three'>
-                    <div class='thumbnail'>
-                        <img style='width: 300px; height: 200px;' src='img/placeholder.png'/>
-                        <div class='caption'>
-                            <h3>Test 3</h3>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <center>
-                    <div style='margin-top:10px'>
-                        <div class='input-prepend input-append'>
-                            <span class='btn left-animation'><i class='icon-chevron-left'></i></span>
-                            <input type='search' class='span3' placeholder='Search' name='search' id='search'/>
-                            <span class='btn right-animation'><i class='icon-chevron-right'></i></span>
-                        </div>
-                    </div>
-                </center>
-            </div>
-
-            <div class='span4'>
-                <legend id='current-legend'>Current initiatives</legend>
-
-                <div class='fixed first'>
-                    <div class='thumbnail'>
-                        <img style='width: 300px; height: 200px;' src='img/placeholder.png'/>
-                        <div class='caption'>
-                            <h3>Test 1</h3>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='fixed two'>
-                    <div class='thumbnail'>
-                        <img style='width: 300px; height: 200px;' src='img/placeholder.png'/>
-                        <div class='caption'>
-                            <h3>Test 2</h3>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class='fixed three'>
-                    <div class='thumbnail'>
-                        <img style='width: 300px; height: 200px;' src='img/placeholder.png'/>
-                        <div class='caption'>
-                            <h3>Test 3</h3>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <center>
-                    <div style='margin-top:10px'>
-                        <div class='input-prepend input-append'>
-                            <span class='btn left-animation'><i class='icon-chevron-left'></i></span>
-                            <input type='search' class='span3' placeholder='Search' name='search' id='search'/>
-                            <span class='btn right-animation'><i class='icon-chevron-right'></i></span>
-                        </div>
-                    </div>
-                </center>
-            </div>
-            <div class='span4'>
-                <legend>Draft initiatives</legend>
-                <center style='margin-top:140px'>
-                    <button class='btn btn-success btn-large'>Discuss and improve drafts</button>
-                    <h1>or</h1>
-                    <button class='btn btn-primary btn-large' id='new-draft'>Start a new draft</button>
-                </center>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class='footer'>
-        <div class='container'>
-            <ul class='footer-links'>
-                <li><a>Blog</a></li>
-                <li class='muted'>·</li>
-                <li><a>About</a></li>
-                <li class='muted'>·</li>
-                <li><a>Authors</a></li>
-            </ul>
-        </div>
-    </footer>
 
     <script type='mustache' id='thumbnail'>
         <div class='thumbnail'>

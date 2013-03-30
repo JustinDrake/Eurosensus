@@ -42,15 +42,26 @@ $(function () {
         return result;
     }
 
-    // $.post('/ecocide', function (data) {
-    //     // Update text
-    //     $daysLeft.find('b').html(data.daysLeft);
-    //     $totalVotes.find('b').html(formatNumber(data.totalVotes));
+    $.post('/votes', function (data) {
+        console.log(data);
 
-    //     // Update progress bars
-    //     $daysLeft.find('.bar').css('width', (data.daysLeft / 3.56) + '%');
-    //     $totalVotes.find('.bar').css('width', (data.totalVotes / 10000) + '%');
-    // });
+        var $votes;
+
+        for(var i in data) {
+            $votes = $('#' + i).find('.featured-votes');
+
+            // Update progress bar label
+            $votes
+                .find('.bar-label')
+                .html(formatNumber(data[i]) + ' votes to date');
+
+            // Update progress bar
+            $votes
+                .find('.bar')
+                .css('background-color', '#62c462')
+                .css('width', data[i] / 10000 + '%');
+        }
+    });
 
     $('#featured-container').on('click', '.featured-website', function () {
         window.open('http://' + $(this).text(), '_blank');
@@ -70,5 +81,17 @@ $(function () {
         if(keyCode === arrow.right) {
             $('#carousel-move-right').click();
         }
+    });
+
+    $('.minifier').on('click', function () {
+        $(this)
+            .toggleClass('icon-chevron-up icon-chevron-down')
+            .closest('.banner')
+            .next('.animation-container')
+            .stop()
+            .animate({
+                height: 'toggle',
+                opacity: 'toggle'
+            }, 'fast');
     });
 });

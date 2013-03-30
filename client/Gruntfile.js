@@ -49,8 +49,13 @@ module.exports = function(grunt) {
                 }, {
                     expand: true,
                     src: ['*'],
-                    cwd: './carousel',
-                    dest: './carousel'
+                    cwd: './img/initiatives',
+                    dest: './img/initiatives'
+                }, {
+                    expand: true,
+                    src: ['*'],
+                    cwd: './img/initiatives-300',
+                    dest: './img/initiatives-300'
                 }]
             }
         }

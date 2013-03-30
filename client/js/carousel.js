@@ -20,9 +20,12 @@ $(function () {
         var $image = $(this);
         var height = $image.height();
 
-        $image.css('margin-top', (266 - height) / 2);
+        // ??? Hack
+        // while(!height) {
+        //     height = $image.height();
+        // }
 
-        console.log(height);
+        $image.css('margin-top', (266 - height) / 2);
     });
 
     $moveRight.on('click', function () {

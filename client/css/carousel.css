@@ -1,6 +1,6 @@
 #carousel {
     margin: 0px;
-    padding: 20px 0px 20px 0px;
+    padding: 60px 0px 20px 0px;
 }
 
 #carousel-images {
@@ -11,8 +11,8 @@
     font-size: 0px;
     background-color: white; /* For transparent pictures */
     overflow: hidden; /* Only show 5 images */
-    border: 10px solid #282828; /* Nice black border around */
-    border-radius: 10px;
+    border: 10px solid #383838; /* Nice black border around */
+    border-radius: 8px;
 }
 
 #carousel-images .carousel-image {
@@ -71,9 +71,9 @@
 }
 
 #carousel-move-left {
-    margin-left: -86px; /* 66 = 46 + 20 + 20 */
+    margin-left: -76px; /* 76 = 46 + 10 + 20 */
 }
 
 #carousel-move-right {
-    margin-left: 960px; /* 960 = 940 + 20 */
+    margin-left: 970px; /* 970 = 940 + 10 + 20 */
 }

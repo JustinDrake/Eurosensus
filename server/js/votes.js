@@ -15,65 +15,46 @@ function daysLeft(endDate) {
 // Make regExes updatable
 // ??? A match can happen between chunks
 
-server.post('/ecocide', function (req, res) {
-    http.get('http://www.endecocide.eu/?lang=en', function (getResponse) {
-        getResponse.on('data', function (chunk) {
-            var piece = chunk.toString('utf8');
-            var match = piece.match(/var counts = "(\d+)"/);
+var data = [{
+    id: 'ecocide',
+    url: 'http://www.endecocide.eu/?lang=en',
+    regEx: /var counts = "(\d+)"/
+}, {
+    id: 'media-pluralism',
+    url: 'http://www.mediainitiative.eu/',
+    regEx: /marginB10">(\d+)\.(\d+)<\/span>\s+signatures/
+}, {
+    id: 'right-to-water',
+    url: 'http://www.right2water.eu/',
+    regEx: /<p class="counter">(\d+),(\d+),(\d+)/
+}, {
+    id: 'stop-vivisection',
+    url: 'http://stopvivisection.eu/',
+    regEx: /<strong>Status: (\d+)\.(\d+)/
+}];
 
-            if(match !== null) {
-                record(match[1]);
+var votes = {};
 
-                return res.send({
-                    totalVotes: match[1]
-                });
-            }
+function updateData() {
+    data.forEach(function (initiative) {
+        http.get(initiative.url, function (getResponse) {
+            getResponse.on('data', function (chunk) {
+                var piece = chunk.toString('utf8');
+                var match = piece.match(initiative.regEx);
+
+                if(match !== null) {
+                    votes[initiative.id] = match[1] + (match[2] ? match[2] : '') + (match[3] ? match[2] : '');
+                }
+            });
         });
     });
+
+    console.log('\nVotes:\n', votes);
+}
+
+server.post('/votes', function (req, res) {
+    res.send(votes);
 });
 
-server.post('/media-pluralism', function (req, res) {
-    http.get('http://www.mediainitiative.eu/', function (getResponse) {
-        getResponse.on('data', function (chunk) {
-            var piece = chunk.toString('utf8');
-            var match = piece.match(/marginB10">(\d+)\.(\d+)<\/span>/);
-
-            if(match !== null) {
-                return res.send({
-                    totalVotes: match[1] + match[2]
-                });
-            }
-        });
-    });
-});
-
-server.post('/right-to-water', function (req, res) {
-    http.get('http://www.right2water.eu/', function (getResponse) {
-        getResponse.on('data', function (chunk) {
-            var piece = chunk.toString('utf8');
-            var match = piece.match(/<p class="counter">(\d+),(\d+),(\d+)/);
-
-            if(match !== null) {
-                return res.send({
-                    totalVotes: match[1] + match[2] + match[3]
-                });
-            }
-        });
-    });
-});
-
-server.post('/stop-vivisection', function (req, res) {
-    http.get('http://stopvivisection.eu/', function (getResponse) {
-        getResponse.on('data', function (chunk) {
-            var piece = chunk.toString('utf8');
-            var match = piece.match(/<strong>Status: (\d+)\.(\d+)/);
-
-            if(match !== null) {
-                return res.send({
-                    totalVotes: match[1] + match[2]
-                });
-            }
-        });
-    });
-});
-
+updateData();
+setInterval(updateData, 60 * 1000);

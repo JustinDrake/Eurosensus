@@ -10,14 +10,16 @@
 
 .featured-title {
     cursor: pointer;
-    color: whitesmoke;
     margin-bottom: 0px;
     font-weight: 300;
 }
 
+.featured-follow i {
+    color: #404040;
+}
+
 .featured-website {
     cursor: pointer;
-    color: whitesmoke;
     margin-top: -5px;
     margin-bottom: 20px;
     font-weight: 200;
@@ -25,10 +27,6 @@
 
 .featured-website:hover {
     text-decoration: underline;
-}
-
-.featured-description {
-    color: whitesmoke;
 }
 
 .featured-video {
@@ -45,6 +43,8 @@
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: white;
+    border: 3px solid #777777; /* Nice black border around */
+    border-radius: 3px;
 }
 
 .featured-image img{
@@ -54,12 +54,11 @@
 
 .bar-label {
     margin-bottom: 5px;
-    color: whitesmoke;
 }
 
 .progress {
-    height: 14px;
-    border-radius: 7px;
+    height: 12px;
+    border-radius: 6px;
 }
 
 .bar-container .span3 {
@@ -73,4 +72,8 @@
 
 .share-buttons {
     width: 340px; /* To center the buttons */
+}
+
+.long-description p {
+    text-align: justify;
 }

@@ -1,8 +1,7 @@
 #banner {
-    margin-top: 40px;
-    background-color: #303030;
+    background-color: #404040;
     min-width: 960px;
-    padding: 0px;
+    /*padding: 0px;*/
 }
 
 #banner hr {
@@ -10,4 +9,28 @@
     border-bottom: 1px solid #222222;
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+.banner {
+    background-color: whitesmoke;
+}
+
+.banner legend {
+    color: #777777;
+    margin-bottom: 10px;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.under-banner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.animation-container {
+    display: none;
+}
+
+legend i {
+    padding: 10px;
 }

@@ -5,7 +5,9 @@ $(function () {
     var templateCarousel = $('#template-carousel').text();
 
     function shuffle(array) {
-        var tmp, current, top = array.length;
+        var tmp;
+        var current;
+        var top = array.length;
 
         if(top) while(--top) {
             current = Math.floor(Math.random() * (top + 1));

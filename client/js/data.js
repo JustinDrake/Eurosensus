@@ -89,7 +89,7 @@ var data = {
             name: 'Initiative for media pluralism',
             shortName: 'Media pluralism',
             site: 'mediainitiative.eu',
-            description: 'We the safeguard of the right to independent and pluralistic information as sanctioned by the European charter on human rights.',
+            description: 'Let\'s safeguard the right to independent and pluralistic information as sanctioned by the European charter on human rights.',
             youtube: '',
             image: 'mediaPluralism.jpg',
             end: '2013-11-01'
