@@ -17,6 +17,7 @@
     <link href='css/banner.css' rel='stylesheet'>
     <link href='css/carousel.css' rel='stylesheet'>
     <link href='css/featured.css' rel='stylesheet'>
+    <link href='css/representatives.css' rel='stylesheet'>
 
     <link href='css/footer.css' rel='stylesheet'>
     <link href='css/main.css' rel='stylesheet'>
@@ -61,49 +62,7 @@
         </div>
         <div id='featured-container' class='container'></div>
 
-        <div class='banner'>
-            <div class='container'>
-                <div class='row'>
-                    <div class='span12'>
-                        <legend>Initiators<i class='icon-chevron-down pull-right minifier'></i></legend>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class='animation-container'>
-            <div class='container under-banner'>
-                <div class='row'>
-                    <div class='span4'>
-                        <span class='media'>
-                            <img class='media-object pull-left' src='img/placeholder2.png'/>
-                            <div class='media-body'>
-                                <h4 class='media-heading'>Maxime Beylot</h4>
-                                France, Bordeaux
-                            </div>
-                        </span>
-                    </div>
-                    <div class='span4'>
-                        <span class='media'>
-                            <img class='media-object pull-left' src='img/placeholder2.png'/>
-                            <div class='media-body'>
-                                <h4 class='media-heading'>Pierre Dagard</h4>
-                                France, Bordeaux
-                            </div>
-                        </span>
-                    </div>
-                    <div class='span4'>
-                        <span class='media'>
-                            <img class='media-object pull-left' src='img/placeholder2.png'/>
-                            <div class='media-body'>
-                                <h4 class='media-heading'>Justin Drake</h4>
-                                Cambridge, UK
-                            </div>
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id='representatives-container'></div>
 
         <div class='banner'>
             <div class='container'>
@@ -273,25 +232,7 @@
                         {{/youtube}}
     </script>
 
-    <script type='mustache' id='template-carousel'>
-        <span>
-            <a id='carousel-move-left' class='move'>‹</a>
-        </span>
-        <span>
-            <a id='carousel-move-right' class='move'>›</a>
-        </span>
-        <span id='carousel-images'>
-            <span id='carousel-dummy'></span>
-            {{#ECIs}}
-                <span class='carousel-image'>
-                    <img src='img/initiatives-300/{{image}}' target='{{id}}'/>
-                    <div class='carousel-caption' style='display:none'>
-                        <h4>{{shortName}}</h4>
-                    </div>
-                </span>
-            {{/ECIs}}
-        </span>
-    </script>
+
 
     <script type='mustache' id='thumbnail'>
         <div class='thumbnail'>
@@ -322,3 +263,52 @@
     <script src='js/featured.js'></script>
     <script src='js/summaries.js'></script>
 </body>
+<script type='mustache' id='template-carousel'>
+    <span>
+        <a id='carousel-move-left' class='move'>‹</a>
+    </span>
+    <span>
+        <a id='carousel-move-right' class='move'>›</a>
+    </span>
+    <span id='carousel-images'>
+        <span id='carousel-dummy'></span>
+        {{#ECIs}}
+            <span class='carousel-image'>
+                <img src='img/initiatives-300/{{image}}' target='{{id}}'/>
+                <div class='carousel-caption' style='display:none'>
+                    <h4>{{shortName}}</h4>
+                </div>
+            </span>
+        {{/ECIs}}
+    </span>
+</script>
+
+<script type='mustache' id='template-representatives'>
+    <div class='banner'>
+        <div class='container'>
+            <div class='row'>
+                <div class='span12'>
+                    <legend>Organisors<i class='icon-chevron-down pull-right minifier'></i></legend>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='animation-container'>
+        <div class='container under-banner'>
+            <div id='representatives-dummy'></div>
+            {{#ECIs}}
+            <div class='row' style='padding-bottom:20px' id='{{id}}-representative'>
+                <div class='span6'>
+                    <h4 class='media-heading'>{{members.representative.name}}</h4>
+                    <span class='representative-title'>Representative, {{members.representative.email}}</span>
+                </div>
+                <div class='span6'>
+                    <h4 class='media-heading'>{{members.substitute.name}}</h4>
+                    <span class='representative-title'>Substitute, {{members.substitute.email}}</span>
+                </div>
+            </div>
+            {{/ECIs}}
+        </div>
+    </div>
+</script>

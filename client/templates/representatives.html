@@ -1,0 +1,29 @@
+<script type='mustache' id='template-representatives'>
+    <div class='banner'>
+        <div class='container'>
+            <div class='row'>
+                <div class='span12'>
+                    <legend>Organisors<i class='icon-chevron-down pull-right minifier'></i></legend>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='animation-container'>
+        <div class='container under-banner'>
+            <div id='representatives-dummy'></div>
+            {{#ECIs}}
+            <div class='row' style='padding-bottom:20px' id='{{id}}-representative'>
+                <div class='span6'>
+                    <h4 class='media-heading'>{{members.representative.name}}</h4>
+                    <span class='representative-title'>Representative, {{members.representative.email}}</span>
+                </div>
+                <div class='span6'>
+                    <h4 class='media-heading'>{{members.substitute.name}}</h4>
+                    <span class='representative-title'>Substitute, {{members.substitute.email}}</span>
+                </div>
+            </div>
+            {{/ECIs}}
+        </div>
+    </div>
+</script>

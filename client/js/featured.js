@@ -1,5 +1,6 @@
 $(function () {
-    var $dummy = $('#featured-dummy');
+    var $featuredDummy = $('#featured-dummy');
+    var $representativesDummy = $('#representatives-dummy');
 
     // Featured initiative animation
     $('#carousel .carousel-image').on('click', function () {
@@ -12,11 +13,24 @@ $(function () {
 
         var $target = $('#' + $image.attr('target'));
 
-        $dummy
+        $featuredDummy
             .stop(true, true)
             .animate({
-                'margin-top': '+=' + ($dummy.position().top - $target.position().top) + 'px'
+                'margin-top': '+=' + ($featuredDummy.position().top - $target.position().top) + 'px'
             });
+
+        var $target = $('#' + $image.attr('target') + '-representative');
+
+        $representativesDummy
+            .stop(true, true)
+            .animate({
+                'margin-top': '+=' + ($representativesDummy.position().top - $target.position().top) + 'px'
+            });
+    });
+
+    // Featured initiative animation
+    $('#carousel .carousel-image').on('click', function () {
+
     });
 
     // Add active class to first image

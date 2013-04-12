@@ -1,0 +1,9 @@
+#representatives-container .under-banner {
+    height: 45px;
+    overflow: hidden;
+}
+
+.representative-title {
+    font-size: 12px;
+    line-height: 20px;
+}

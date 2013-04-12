@@ -5,6 +5,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     grunt.initConfig({
         jshint: {
@@ -57,6 +59,26 @@ module.exports = function(grunt) {
                     cwd: './img/initiatives-300',
                     dest: './img/initiatives-300'
                 }]
+            }
+        },
+        concat: {
+            templates: {
+                src: [
+                    'html/index.html',
+                    'templates/carousel.html',
+                    'templates/representatives.html'
+                ],
+                dest: 'index.html'
+            }
+        },
+        watch: {
+            concat: {
+                files: [
+                    'html/index.html',
+                    'templates/carousel.html',
+                    'templates/representatives.html'
+                ],
+                tasks: ['concat']
             }
         }
     });

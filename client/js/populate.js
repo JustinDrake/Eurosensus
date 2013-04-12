@@ -2,18 +2,25 @@ $(function () {
     var $container = $('#featured-container');
 
     var templateFeatured = $('#template-featured').text();
-    var templateCarousel = $('#template-carousel').text();
 
     function shuffle(array) {
         var tmp;
-        var current;
-        var top = array.length;
+        var random;
+        var current = array.length;
 
-        if(top) while(--top) {
-            current = Math.floor(Math.random() * (top + 1));
-            tmp = array[current];
-            array[current] = array[top];
-            array[top] = tmp;
+        // Deal with the empty array case
+        if(current) {
+            while(current - 1) {
+                current -= 1;
+
+                // Select a random index [0:current]
+                random = Math.floor(Math.random() * (current + 1));
+
+                // Swap the randomly value with the top value
+                tmp = array[random];
+                array[random] = array[current];
+                array[current] = tmp;
+            }
         }
 
         return array;
@@ -22,6 +29,7 @@ $(function () {
     // Shuffle the initiatives
     data.ECIs = shuffle(data.ECIs);
 
-    $container.html(Mustache.to_html(templateFeatured, data));
-    $('#carousel').html(Mustache.to_html(templateCarousel, data));
+    $('#featured-container').html(Mustache.to_html($('#template-featured').text(), data));
+    $('#carousel').html(Mustache.to_html($('#template-carousel').text(), data));
+    $('#representatives-container').html(Mustache.to_html($('#template-representatives').text(), data));
 });

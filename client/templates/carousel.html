@@ -1,0 +1,19 @@
+<script type='mustache' id='template-carousel'>
+    <span>
+        <a id='carousel-move-left' class='move'>‹</a>
+    </span>
+    <span>
+        <a id='carousel-move-right' class='move'>›</a>
+    </span>
+    <span id='carousel-images'>
+        <span id='carousel-dummy'></span>
+        {{#ECIs}}
+            <span class='carousel-image'>
+                <img src='img/initiatives-300/{{image}}' target='{{id}}'/>
+                <div class='carousel-caption' style='display:none'>
+                    <h4>{{shortName}}</h4>
+                </div>
+            </span>
+        {{/ECIs}}
+    </span>
+</script>
