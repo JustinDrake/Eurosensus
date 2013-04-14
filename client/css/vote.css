@@ -1,0 +1,23 @@
+body {
+    margin-top: 60px;
+}
+
+legend {
+    color: #428bca;
+    border-bottom: 1px solid #428bca;
+}
+
+.intro h1 {
+    color: #b94a48;
+    font-size: 50px;
+    line-height: 1.5;
+    border-bottom: 4px solid #b94a48;
+}
+
+.navbar-brand {
+    color: #b94a48;
+}
+
+#recaptcha_response_field {
+    min-height: 0px;
+}

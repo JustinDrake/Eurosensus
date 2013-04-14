@@ -1,101 +1,52 @@
 <!doctype html>
 <head>
-    <meta charset='utf-8' http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+    <meta charset='utf-8' name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>Eurosensus</title>
 
-    <link href='css/lib/bootstrap.css' rel='stylesheet'>
-
+    <link href='css/bootstrap3.css' rel='stylesheet'>
+    <link href='css/vote.css' rel='stylesheet'>
+    <link href='css/lib/font-awesome.css' rel='stylesheet'>
     <script src='js/lib/jquery.js'></script>
-    <script src='js/lib/bootstrap.js'></script>
+    <script src='js/lib/bootstrap-dropdown-3.js'></script>
+    <script src='js/lib/mustache.js'></script>
+    <script src='js/vote/data.js'></script>
+    <script src='js/vote/main.js'></script>
 </head>
 <body>
+    <div class='navbar navbar-fixed-top'>
+        <div class='container'>
+            <div class='navbar-brand'>Eurosensus</div>
+        </div>
+    </div>
     <div class='container'>
-        <div class='row' style='margin-top:20px'>
-            <form class='form-horizontal offset3 span6'>
-                <legend>Basic information</legend>
-                <div class='control-group'>
-                    <label class='control-label' for='inputEmail'>Name</label>
-                    <div class='controls'>
-                        <input type='text' placeholder='Name'>
-                    </div>
-                </div>
-                <div class='control-group'>
-                    <label class='control-label' for='inputPassword'>Surname</label>
-                    <div class='controls'>
-                        <input type='text' placeholder='Surname'>
-                    </div>
-                </div>
-                <div class='control-group'>
-                    <label class='control-label' for='inputPassword'>Date of birth</label>
-                    <div class='controls'>
-                        <input type='text' placeholder='Date of birth'>
-                    </div>
-                </div>
-                <div class='control-group'>
-                    <label class='control-label' for='inputPassword'>Nationality</label>
-                    <div class='controls'>
-                        <input type='text' placeholder='Nationality'>
-                    </div>
-                </div>
-                <legend>Identification</legend>
-                <div class='control-group'>
-                    <label class='control-label'>Document</label>
-                    <div class='controls'>
-                        <div class='btn-group'>
-                            <button class='btn dropdown-toggle' data-toggle='dropdown'>Select document <span class='caret'></span></button>
-                            <ul class='dropdown-menu'>
-                                <li><a>Passport</a></li>
-                                <li><a>Identity card</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        <div class='row'>
+            <div class='intro col-offset-2 col-span-8'>
+                <h1>Have your say</h1>
+                <p class='lead'>Enter your details, and make your vote count.</p>
+            </div>
 
-                <div class='control-group'>
-                    <label class='control-label' for='inputPassword'>Document number</label>
-                    <div class='controls'>
-                        <input type='text' placeholder='Document number'>
-                    </div>
-                </div>
-
-                <legend>Address</legend>
-                <div class='control-group'>
-                    <label class='control-label' for='inputPassword'>Full address</label>
-                    <div class='controls'>
-                        <input type='text' placeholder='Full address'>
-                    </div>
-                </div>
-                <div class='control-group'>
-                    <label class='control-label' for='inputPassword'>Country</label>
-                    <div class='controls'>
-                        <input type='text' placeholder='Country'>
-                    </div>
-                </div>
-
-                <legend>Final steps</legend>
-                <label class='checkbox'>
-                    <input type='checkbox'>I hereby certify that the information provided in this form is correct and that I have not already supported this proposed citizens' initiative.
-                </label>
-
-                <label class='checkbox'>
-                    <input type='checkbox'>I have read the privacy statement.
-                </label>
-
+            <form class='form-horizontal col-offset-2 col-span-8'></form>
+            <div style='margin-bottom:30px'>
                 <center>
-                    <script type='text/javascript' src='http://www.google.com/recaptcha/api/challenge?k=6LdaW90SAAAAAJdcDPdyuHZcU16vkdh2hcGbAMg7'></script>
+                    <script type='text/javascript' src='http://www.google.com/recaptcha/api/challenge?k=6LdaW90SAAAAAJdcDPdyuHZcU16vkdh2hcGbAMg7'>
+                    </script>
                     <noscript>
                         <iframe src='http://www.google.com/recaptcha/api/noscript?k=6LdaW90SAAAAAJdcDPdyuHZcU16vkdh2hcGbAMg7' height='300' width='500' frameborder='0'></iframe><br>
                         <textarea name='recaptcha_challenge_field' rows='3' cols='40'></textarea>
                         <input type='hidden' name='recaptcha_response_field' value='manual_challenge'>
                     </noscript>
                 </center>
-
-                <div class='control-group' style='margin-top:20px'>
-                    <div class='controls'>
-                    <span type='submit' class='btn btn-primary' id='vote'>Count my vote!</span>
-                    </div>
-                </div>
-            </form>
+            </div>
+            <div class='col-offset-2 col-span-4'>
+                <label class='checkbox' style='text-align:justify'>
+                    <input type='checkbox'/>I certify the information in this form is correct, that I have not previously supported this initiative and that I have read the privacy statement.
+                </label>
+            </div>
+            <div class='col-span-4'>
+                <center>
+                    <span class='btn btn-primary btn-large' id='vote'>Count my vote!</span>
+                </center>
+            </div>
         </div>
 
         <div class='modal fade'>
@@ -112,3 +63,17 @@
         </div>
     </div>
 </body>
+
+<script type='mustache' id='template-voting-form'>
+    {{#sections}}
+        <legend>{{title}}<i class='icon-{{icon}} pull-right' style='margin-top:10px'></i></legend>
+        {{#inputs}}
+        <div class='control-group'>
+            <label class='control-label'>{{name}}</label>
+            <div class='controls'>
+                <input type='text' placeholder='{{name}}' class='input-with-feedback'>
+            </div>
+        </div>
+        {{/inputs}}
+    {{/sections}}
+</script>
