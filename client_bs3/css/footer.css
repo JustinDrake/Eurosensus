@@ -2,24 +2,68 @@
     margin-top: 20px;
     border-radius: 0px;
     background-color: #222222;
-    height: 135px;
+    height: 235px;
 }
 
 #footer .footer-label {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: whitesmoke;
-    font-size: 20px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    color: white;
+    font-size: 18px;
 }
 
 #footer i {
-    margin: 10px;
-    font-size: 40px;
-    color: #777777;
+    margin: 12px;
+    margin-top: 0px;
+    font-size: 42px;
+    color: white;
 }
 
 #footer i:hover {
     text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
     color: white;
     transition: all .2s linear;
+}
+
+#footer hr {
+    margin-top: 45px;
+    margin-bottom: 10px;
+    border-color: white;
+}
+
+#footer blockquote {
+    border-width: 0px;
+    margin-bottom: 0px;
+}
+
+#footer blockquote p {
+    color: white;
+    line-height: 20px;
+    font-size: 20px;
+}
+
+#footer .quote {
+    color: white;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#footer blockquote small {
+    color: white;
+}
+
+.tooltip-inner {
+    background-color: #b94a48;
+    color: white;
+    font-weight: 500;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #b94a48;
+}
+
+#footer .tooltip-inner {
+    font-size: 16px;
 }

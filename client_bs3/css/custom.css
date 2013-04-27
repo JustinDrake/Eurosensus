@@ -25,31 +25,6 @@
     margin-top: 10px;
 }
 
-.floating-bar .btn-danger {
-    margin-bottom: 10px;
-}
-
-.floating-bar legend i {
-    color: #b94a48;
-}
-
-.floating-bar .signature-country {
-    font-style: italic;
-}
-
-.floating-bar .signature-initiative {
-    font-weight: 600;
-}
-
-.floating-bar hr {
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.floating-bar .well {
-    background-color: white;
-}
-
 #header {
     background-color: white;
 }
@@ -64,4 +39,8 @@
 
 .affix {
     top: 20px;
+}
+
+.muted {
+    color: #999;
 }

@@ -79,7 +79,7 @@ var data = {
             name: 'Ecocide',
             shortName: 'Ecocide',
             site: 'endecocide.eu',
-            description: 'Ecocide is the extensive damage to, destruction of or loss of ecosystems of a given territory. Let\'s end Ecocide in Europe together.',
+            description: 'Ecocide is the extensive damage to, destruction of or loss of ecosystems of a given territory. Let\'s end ecocide in Europe together.',
             youtube: 'j1uTDE5tayQ',
             image: 'ecocide.jpg',
             end: '2014-01-21',
@@ -217,7 +217,7 @@ var data = {
         { // Has counter
             id: 'right-to-water',
             name: 'Water is a human right',
-            shortName: 'Water right',
+            shortName: 'Right to water',
             site: 'right2water.eu',
             description: 'Water is a public good, not a commodity. We want legislation implementing the human right to water and sanitation.',
             youtube: '7fQcDDF0f4c',

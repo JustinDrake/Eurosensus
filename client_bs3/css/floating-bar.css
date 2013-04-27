@@ -1,0 +1,28 @@
+.floating-bar .btn-danger:first-child {
+    margin-bottom: 20px;
+}
+
+.floating-bar legend i {
+    color: #b94a48;
+}
+
+.floating-bar legend {
+    margin-top: -10px;
+}
+
+.floating-bar .signature-country {
+    font-style: italic;
+}
+
+.floating-bar .signature-initiative {
+    font-weight: 600;
+}
+
+.floating-bar hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.floating-bar .well:nth-child(2) {
+    background-color: white;
+}

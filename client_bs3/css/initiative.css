@@ -12,7 +12,7 @@
 .initiative-image {
     text-align: center;
     -webkit-filter: grayscale(100%);
-    line-height: 150px;
+    line-height: 140px;
 }
 
 .initiative-image:hover {
@@ -38,18 +38,12 @@
 .initiatives hr {
     border-top-width: 1px;
     border-bottom-width: 0px;
-    border-color: #c8c8c8;
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 12px;
+    margin-bottom: 12px;
 }
 
 #initiatives-container hr:first-child {
     display: none;
-}
-
-.initiatives legend {
-    border-width: 1px;
-    border-color: #c8c8c8;
 }
 
 .initiative {
