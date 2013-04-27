@@ -1,0 +1,67 @@
+/*@font-face {
+    font-family: gotham;
+    src: url('font/gothamBook.ttf'),
+}*/
+
+#banner {
+    background-color: #b94a48;
+    color: whitesmoke;
+    font-size: 80px;
+    height: 200px;
+    line-height: 80px;
+    font-weight: 100;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#search {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: whitesmoke;
+    margin-bottom: 30px;
+}
+
+.minifier {
+    margin-top: 10px;
+}
+
+.floating-bar .btn-danger {
+    margin-bottom: 10px;
+}
+
+.floating-bar legend i {
+    color: #b94a48;
+}
+
+.floating-bar .signature-country {
+    font-style: italic;
+}
+
+.floating-bar .signature-initiative {
+    font-weight: 600;
+}
+
+.floating-bar hr {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.floating-bar .well {
+    background-color: white;
+}
+
+#header {
+    background-color: white;
+}
+
+.navbar .nav .divider {
+    border-color: #777777;
+}
+
+.nav li {
+    font-size: 15px;
+}
+
+.affix {
+    top: 20px;
+}

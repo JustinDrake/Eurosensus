@@ -1,7 +1,7 @@
 var http = require('http');
 var util = require('util');
 var server = require('./server.js').server;
-var record = require('./database.js').record;
+// var record = require('./database.js').record;
 
 function daysLeft(endDate) {
     var millisecondDifference = new Date(endDate).getTime() - Date.now();

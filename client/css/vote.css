@@ -2,9 +2,14 @@ body {
     margin-top: 60px;
 }
 
-legend {
+legend.legend-primary {
     color: #428bca;
     border-bottom: 1px solid #428bca;
+}
+
+legend.legend-success {
+    color: #468847;
+    border-bottom: 1px solid #468847;
 }
 
 .intro h1 {

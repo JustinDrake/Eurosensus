@@ -1,0 +1,25 @@
+#footer {
+    margin-top: 20px;
+    border-radius: 0px;
+    background-color: #222222;
+    height: 135px;
+}
+
+#footer .footer-label {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    font-size: 20px;
+}
+
+#footer i {
+    margin: 10px;
+    font-size: 40px;
+    color: #777777;
+}
+
+#footer i:hover {
+    text-shadow: 0 1px 0 rgba(255,255,255,.1), 0 0 30px rgba(255,255,255,.4);
+    color: white;
+    transition: all .2s linear;
+}

@@ -19,13 +19,18 @@
         </div>
     </div>
     <div class='container'>
-        <div class='row'>
-            <div class='intro col-offset-2 col-span-8'>
-                <h1>Have your say</h1>
-                <p class='lead'>Enter your details, and make your vote count.</p>
+        <div class='row col-offset-2 col-span-8'>
+            <div class='intro'>
+                <h1>Your info</h1>
+                <p class='lead'>Make your voice heard</p>
             </div>
 
-            <form class='form-horizontal col-offset-2 col-span-8'></form>
+            <div class='panel panel-warning col-offset-1 col-span-10'>
+                <div class='panel-heading'>Warning</div>
+                <span>Carefully fill in this form. Any mistake may invalidate your vote when it is reviewed.</span>
+            </div>
+
+            <form class='form-horizontal col-offset-1 col-span-10'></form>
             <div style='margin-bottom:30px'>
                 <center>
                     <script type='text/javascript' src='http://www.google.com/recaptcha/api/challenge?k=6LdaW90SAAAAAJdcDPdyuHZcU16vkdh2hcGbAMg7'>
@@ -37,14 +42,14 @@
                     </noscript>
                 </center>
             </div>
-            <div class='col-offset-2 col-span-4'>
+            <div class='col-offset-1 col-span-5'>
                 <label class='checkbox' style='text-align:justify'>
                     <input type='checkbox'/>I certify the information in this form is correct, that I have not previously supported this initiative and that I have read the privacy statement.
                 </label>
             </div>
-            <div class='col-span-4'>
+            <div class='col-span-5'>
                 <center>
-                    <span class='btn btn-primary btn-large' id='vote'>Count my vote!</span>
+                    <span class='btn btn-success btn-large' id='vote'>Count my vote!</span>
                 </center>
             </div>
         </div>
@@ -66,14 +71,32 @@
 
 <script type='mustache' id='template-voting-form'>
     {{#sections}}
-        <legend>{{title}}<i class='icon-{{icon}} pull-right' style='margin-top:10px'></i></legend>
+        <legend class='legend-primary'>{{title}}<i class='icon-{{icon}} pull-right' style='margin-top:10px'></i></legend>
         {{#inputs}}
         <div class='control-group'>
             <label class='control-label'>{{name}}</label>
             <div class='controls'>
-                <input type='text' placeholder='{{name}}' class='input-with-feedback'>
+                {{^dropdown}}
+                    <input id='input-{{id}}' type='text' placeholder='{{^placeholder}}{{name}}{{/placeholder}}{{#placeholder}}{{placeholder}}{{/placeholder}}' class='input-with-feedback'>
+                {{/dropdown}}
+                {{#dropdown}}
+                    <div class='btn-group'>
+                        <button id='dropdown-{{id}}' class='btn dropdown-toggle btn-primary' data-toggle='dropdown'>{{dropdown}} <span class='caret'></span></button>
+                        <ul class='dropdown-menu'>
+                            {{#dropdownValues}}
+                                <li><a>{{value}}</a></li>
+                            {{/dropdownValues}}
+                        </ul>
+                    </div>
+                {{/dropdown}}
             </div>
         </div>
         {{/inputs}}
     {{/sections}}
+</script>
+
+<script type='mustache' id='template-dropdown-menu'>
+    {{#dropdownValues}}
+        <li><a>{{value}}</a></li>
+    {{/dropdownValues}}
 </script>

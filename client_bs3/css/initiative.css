@@ -1,0 +1,60 @@
+.initiative-title {
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 600;
+}
+
+.initiative .progress {
+    height: 10px;
+    border-radius: 5px;
+}
+
+.initiative-image {
+    text-align: center;
+    -webkit-filter: grayscale(100%);
+    line-height: 150px;
+}
+
+.initiative-image:hover {
+    -webkit-filter: grayscale(0%);
+}
+
+.initiative-image img {
+    vertical-align: middle;
+}
+
+.initiative .lead {
+    font-size: 18px;
+}
+
+.initiative .progress-group1 {
+    margin-top: -15px;
+}
+
+.initiative .progress-group2 {
+    margin-top: -25px;
+}
+
+.initiatives hr {
+    border-top-width: 1px;
+    border-bottom-width: 0px;
+    border-color: #c8c8c8;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#initiatives-container hr:first-child {
+    display: none;
+}
+
+.initiatives legend {
+    border-width: 1px;
+    border-color: #c8c8c8;
+}
+
+.initiative {
+    border-left: 2px solid transparent;
+}
+.initiative:hover {
+    border-left: 2px solid #b94a48;
+};
