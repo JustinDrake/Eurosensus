@@ -5,7 +5,9 @@
 
     <link href='css/lib/bootstrap.css' rel='stylesheet'>
     <link href='css/lib/font-awesome.css' rel='stylesheet'>
+
     <link href='css/custom.css' rel='stylesheet'>
+    <link href='css/banner.css' rel='stylesheet'>
     <link href='css/initiative.css' rel='stylesheet'>
     <link href='css/floating-bar.css' rel='stylesheet'>
     <link href='css/footer.css' rel='stylesheet'>
@@ -47,11 +49,23 @@
     </div>
 
     <div id='banner'>
-        <center>
-            <span>Join the</span>
-            <br>
-            <span>mouvement</span>
-        </center>
+        <div class='container'>
+            <div class='row hidden-phone'>
+                <div class='col-span-6' id='banner-left'>
+                    <span class='pull-right'>Join the</span>
+                    <br>
+                    <span class='pull-right'>movement</span>
+                </div>
+                <div class='col-span-6' id='banner-right'>
+                    <p class='lead'>Discover thirten European Citizen Initiatives, the organisors and the causes they fight for.</p>
+                </div>
+            </div>
+            <center class='visible-phone'>
+                <span>Join the</span>
+                <br>
+                <span>move</span>
+            </center>
+        </div>
     </div>
 
     <div id='search'>
@@ -164,7 +178,7 @@
                 <div class='col-span-4 col-small-span-4'>
                     <center>
                         <div class='row'>
-                            <div class='footer-label'>GIVE US</div>
+                            <div class='footer-label'>SUPPORT US</div>
                         </div>
                         <div class='row'>
                             <i class='icon-heart' data-title='Evangelise' data-placement='left'></i>
@@ -176,7 +190,7 @@
             <hr>
             <center>
                 <blockquote>
-                    <p><i class='quote icon-quote-left'></i>Paradigm-shifting, iconically democratic<i class='quote icon-quote-right'></i></p>
+                    <p><i class='quote icon-quote-left'></i>Paradigm shifting, iconically democratic<i class='quote icon-quote-right'></i></p>
                     <small>The European Times</small>
                 </blockquote>
             </center>

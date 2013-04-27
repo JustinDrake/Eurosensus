@@ -1,0 +1,25 @@
+#banner {
+    background-color: #b94a48;
+    color: whitesmoke;
+    font-size: 80px;
+    height: 200px;
+    line-height: 80px;
+    font-weight: 100;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#banner-left {
+    border-right: 5px solid white;
+}
+
+#banner-right {
+    height: 160px;
+    display: table;
+}
+
+#banner-right p {
+    font-size: 23px;
+    vertical-align: middle;
+    display: table-cell;
+}
